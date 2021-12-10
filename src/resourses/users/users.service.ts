@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { STATUS_CODES } from "../../constants/constants";
 import { ERRORS } from "../../constants/errors";
 import { IUser, IUserCreate, IUserUpdate } from "../../interfaces/users";
-import { users } from "./users.memory.repository";
+import { users, usersModify } from "./users.memory.repository";
 import { unassignUserAfterDelete } from "../tasks/task.service";
 
 export const getAllUsers = (): IUser[] => {
@@ -37,7 +37,7 @@ export const updateUser = (updatedUser: IUserUpdate, userId:string) =>{
 export const deleteUser = (userId: string) =>{
     const result = users.filter(el => el.id !== userId);
     if(result.length === users.length) throw {message: ERRORS.USER_NOT_FOUND, status: STATUS_CODES.NOT_FOUND};
-    users = result;
+    usersModify(result);
     unassignUserAfterDelete(userId);
     return STATUS_CODES.NO_CONTENT; 
 }

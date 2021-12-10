@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteByBoard = exports.deleteTask = exports.updateTask = exports.createTask = exports.getTaskById = exports.getAllTasks = exports.unassignUserAfterDelete = void 0;
+exports.deleteTask = exports.updateTask = exports.createTask = exports.getTaskById = exports.getAllTasks = exports.unassignUserAfterDelete = void 0;
 const { v4: uuidv4 } = require('uuid');
 const errors_1 = require("../../constants/errors");
 const constants_1 = require("../../constants/constants");
@@ -59,12 +59,8 @@ const deleteTask = (boardId, taskId) => {
     const taskTodelete = tasks_memory_repository_1.tasks.find(el => el.id === taskId);
     if (boardWithTasks.id !== taskTodelete.boardId)
         throw { message: errors_1.ERRORS.TASK_FROM_ANOTHER_BOARD, status: constants_1.STATUS_CODES.BAD_REQUEST };
-    tasks_memory_repository_1.tasks = result;
+    (0, tasks_memory_repository_1.taskModify)(result);
     return constants_1.STATUS_CODES.NO_CONTENT;
 };
 exports.deleteTask = deleteTask;
-const deleteByBoard = (boardId) => {
-    tasks_memory_repository_1.tasks = tasks_memory_repository_1.tasks.filter(el => el.boardId !== boardId);
-};
-exports.deleteByBoard = deleteByBoard;
 //# sourceMappingURL=task.service.js.map

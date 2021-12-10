@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.boards = void 0;
-exports.boards = [{
+exports.setBoards = exports.getBoards = void 0;
+let boards = [{
         id: 'c8f746c3-7089-4abc-af07-d66c5548b8f0',
         title: 'Random board',
         columns: []
@@ -12,4 +12,12 @@ exports.boards = [{
         columns: []
     }
 ];
+const getBoards = () => {
+    return boards;
+};
+exports.getBoards = getBoards;
+const setBoards = (data) => {
+    boards = data;
+};
+exports.setBoards = setBoards;
 //# sourceMappingURL=board.memory.repository.js.map

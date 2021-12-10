@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.tasks = void 0;
+exports.taskModify = exports.taskFilter = exports.getTasks = exports.tasks = void 0;
 const { v4: uuidv4 } = require('uuid');
 exports.tasks = [{
         id: 'c8f746c3-7089-4abc-af07-000000000000',
@@ -21,4 +21,16 @@ exports.tasks = [{
         columnId: "22222222-0000-0000-0000-000000000000"
     }
 ];
+const getTasks = () => {
+    return exports.tasks;
+};
+exports.getTasks = getTasks;
+const taskFilter = (boardId) => {
+    exports.tasks = exports.tasks.filter(el => el.boardId !== boardId);
+};
+exports.taskFilter = taskFilter;
+const taskModify = (data) => {
+    exports.tasks = data;
+};
+exports.taskModify = taskModify;
 //# sourceMappingURL=tasks.memory.repository.js.map

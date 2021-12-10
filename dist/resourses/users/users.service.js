@@ -40,7 +40,7 @@ const deleteUser = (userId) => {
     const result = users_memory_repository_1.users.filter(el => el.id !== userId);
     if (result.length === users_memory_repository_1.users.length)
         throw { message: errors_1.ERRORS.USER_NOT_FOUND, status: constants_1.STATUS_CODES.NOT_FOUND };
-    users_memory_repository_1.users = result;
+    (0, users_memory_repository_1.usersModify)(result);
     (0, task_service_1.unassignUserAfterDelete)(userId);
     return constants_1.STATUS_CODES.NO_CONTENT;
 };

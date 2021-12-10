@@ -14,3 +14,7 @@ export let users: IUser[] = [{
     login: 'login',
     password: 'password'  
 }];
+
+export const usersModify =(data:IUser[]):void =>{
+    users = data;
+}

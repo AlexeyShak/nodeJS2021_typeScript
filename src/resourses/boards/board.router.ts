@@ -52,7 +52,7 @@ export const boardsController = async (req, res) =>{
             }
                putBoardObjValidator(boardObj);
                let board = updateBoard(boardObj, boardId);
-               return sendResponse(res, STATUS_CODES.CREATED, board);
+               return sendResponse(res, STATUS_CODES.OK, board);
         }
         else if(req.method === REQUEST_METHODS.DELETE && urlValidator.test(req.url)){
             const boardId: string = req.url.split('/')[2];

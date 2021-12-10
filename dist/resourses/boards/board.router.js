@@ -59,7 +59,7 @@ const boardsController = (req, res) => __awaiter(void 0, void 0, void 0, functio
             }
             (0, boardValidator_1.putBoardObjValidator)(boardObj);
             let board = (0, board_service_1.updateBoard)(boardObj, boardId);
-            return (0, response_1.sendResponse)(res, constants_1.STATUS_CODES.CREATED, board);
+            return (0, response_1.sendResponse)(res, constants_1.STATUS_CODES.OK, board);
         }
         else if (req.method === constants_1.REQUEST_METHODS.DELETE && urlValidator.test(req.url)) {
             const boardId = req.url.split('/')[2];

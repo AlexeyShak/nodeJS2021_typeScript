@@ -21,3 +21,13 @@ export let tasks:ITask[]= [{
     columnId: "22222222-0000-0000-0000-000000000000"
 }
 ];
+ export const getTasks = ():ITask[] =>{
+    return tasks;
+ }
+
+ export const taskFilter = (boardId:string):void =>{
+    tasks = tasks.filter(el => el.boardId !== boardId)
+ }
+export const taskModify = (data:ITask[]):void =>{
+    tasks = data;
+}
