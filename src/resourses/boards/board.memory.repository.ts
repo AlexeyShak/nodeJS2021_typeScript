@@ -1,6 +1,6 @@
 import { IBoard } from "../../interfaces/boards";
 
-let boards:IBoard[] = [{
+let boards: IBoard[] = [{
     id: 'c8f746c3-7089-4abc-af07-d66c5548b8f0',
     title: 'Random board',
     columns: []
@@ -12,7 +12,10 @@ let boards:IBoard[] = [{
 }
 ];
 
-export const getBoards = ():IBoard[] =>boards
-export const setBoards = (data:IBoard[]):void => {
+export const getBoards = (): IBoard[] => {
+    return boards; 
+}
+
+export const setBoards = (data: IBoard[]): void => {
     boards = data;
 }

@@ -1,4 +1,4 @@
-
+import { Request, Response } from 'express';
 import { REQUEST_METHODS, STATUS_CODES} from '../../constants/constants';
 import  { ERRORS } from '../../constants/errors';
 
@@ -6,13 +6,13 @@ import  {sendResponse} from '../../helpers/response';
 import {createTask, deleteTask, getAllTasks, getTaskById, updateTask} from './task.service'
 
 import {requestDataExtractor} from '../../helpers/request';
-import { ITaskCreate, ITaskUpdate } from '../../interfaces/tasks';
+import { ITask, ITaskUpdate } from '../../interfaces/tasks';
 import { postTaskObjValidator, putTaskObjValidator } from '../../validators/taskValidator';
 
 const uuidValidator = /(\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b)/;
 const taskIdUrlValidator = /\/boards\/.+\/tasks\/.+/;
 
-export const tasksController = async (req, res) =>{ 
+export const tasksController = async (req: Request, res: Response): Promise<void> =>{ 
     try {
         if(req.method === REQUEST_METHODS.GET && req.url.endsWith('/tasks')){
             const boardId:string = req.url.split('/')[2];
@@ -32,8 +32,8 @@ export const tasksController = async (req, res) =>{
             if(!uuidValidator.test(taskId)){
             return sendResponse(res, STATUS_CODES.BAD_REQUEST, ERRORS.WRONG_ID_FORMAT);  
             }
-            const user = getTaskById(boardId, taskId);
-            return sendResponse(res, STATUS_CODES.OK, user);
+            const task = getTaskById(boardId, taskId);
+            return sendResponse(res, STATUS_CODES.OK, task);
         }
 
         if(req.method === REQUEST_METHODS.POST && req.url.endsWith('/tasks')){
@@ -42,7 +42,7 @@ export const tasksController = async (req, res) =>{
                 return sendResponse(res, STATUS_CODES.BAD_REQUEST, ERRORS.WRONG_ID_FORMAT);  
             }
            const data = await requestDataExtractor(req);
-           let taskObj: ITaskCreate;
+           let taskObj: ITask;
            try {
                 taskObj = JSON.parse(data);
            } catch(e) {

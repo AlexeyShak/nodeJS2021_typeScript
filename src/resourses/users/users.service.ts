@@ -25,7 +25,7 @@ export const createUser = (newUser: IUser): IUser =>{
     return newUser;
 }
 
-export const updateUser = (updatedUser: IUserUpdate, userId:string): IUser =>{
+export const updateUser = (updatedUser: IUserUpdate, userId: string): IUser =>{
     const result: number = users.findIndex(el => el.id === userId);
     if(result === -1) throw {message: ERRORS.USER_NOT_FOUND, status: STATUS_CODES.NOT_FOUND};
     users[result].name = updatedUser.name || users[result].name;

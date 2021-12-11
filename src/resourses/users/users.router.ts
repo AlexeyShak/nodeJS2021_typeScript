@@ -1,3 +1,4 @@
+import { Request, Response } from 'express';
 import { REQUEST_METHODS, STATUS_CODES } from "../../constants/constants";
 import { ERRORS } from "../../constants/errors";
 import { requestDataExtractor } from "../../helpers/request";
@@ -10,13 +11,13 @@ import {postObjValidator, putObjValidator} from "../../validators/userValidator"
 const uuidValidator = /(\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b)/;
 const urlValidator = /\/users\/.+/; 
 
-export const usersController = async (req, res) => {
+export const usersController = async (req: Request, res: Response): Promise<void> => {
     try {
         if(req.method === REQUEST_METHODS.GET && req.url === '/users' ){
             return sendResponse(res, STATUS_CODES.OK, getAllUsers());
         }
         if(req.method === REQUEST_METHODS.GET && urlValidator.test(req.url)){
-            const userId:string = req.url.split('/')[2];
+            const userId: string = req.url.split('/')[2];
             if(!uuidValidator.test(userId)){
                 return sendResponse(res, STATUS_CODES.BAD_REQUEST, ERRORS.WRONG_ID_FORMAT);  
             }
@@ -36,8 +37,8 @@ export const usersController = async (req, res) => {
                const user = createUser(dataObj)
                return sendResponse(res, STATUS_CODES.CREATED, user)
         }
-        if(req.method ===REQUEST_METHODS.PUT && urlValidator.test(req.url)){
-            const userId:string = req.url.split('/')[2];
+        if(req.method === REQUEST_METHODS.PUT && urlValidator.test(req.url)){
+            const userId: string = req.url.split('/')[2];
             if(!uuidValidator.test(userId)){
                 return sendResponse(res, STATUS_CODES.BAD_REQUEST, ERRORS.WRONG_ID_FORMAT);  
             }

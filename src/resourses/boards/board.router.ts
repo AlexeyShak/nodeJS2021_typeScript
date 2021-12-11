@@ -1,4 +1,4 @@
-
+import { Request, Response } from 'express';
 import { REQUEST_METHODS, STATUS_CODES} from '../../constants/constants';
 import  { ERRORS } from '../../constants/errors';
 
@@ -7,13 +7,13 @@ import {getAllBoards, getBoardById, createBoard, updateBoard, deleteBoard} from 
 
 import {requestDataExtractor} from '../../helpers/request';
 import {postBoardObjValidator, putBoardObjValidator} from '../../validators/boardValidator';
-import { IBoardCreate, IBoardUpdate } from '../../interfaces/boards';
+import { IBoard, IBoardUpdate } from '../../interfaces/boards';
 
 const uuidValidator = /(\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b)/;
 const urlValidator = /\/boards\/.+/;
 
 
-export const boardsController = async (req, res) =>{ 
+export const boardsController = async (req: Request, res: Response): Promise<void> =>{ 
     try {
         if(req.method === REQUEST_METHODS.GET && req.url === '/boards' ){
             return sendResponse(res, STATUS_CODES.OK, getAllBoards());
@@ -23,12 +23,12 @@ export const boardsController = async (req, res) =>{
             if(!uuidValidator.test(boardId)){
                 return sendResponse(res, STATUS_CODES.BAD_REQUEST, ERRORS.WRONG_ID_FORMAT);  
             }
-            const user = getBoardById(boardId);
-            return sendResponse(res, STATUS_CODES.OK, user);
+            const board = getBoardById(boardId);
+            return sendResponse(res, STATUS_CODES.OK, board);
         }
         if(req.method === REQUEST_METHODS.POST && req.url === '/boards'){
            const data = await requestDataExtractor(req);
-           let boardObj: IBoardCreate;
+           let boardObj: IBoard;
            try {
                 boardObj = JSON.parse(data);
            } catch(e) {

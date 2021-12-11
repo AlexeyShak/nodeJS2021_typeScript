@@ -1,4 +1,6 @@
-export const requestDataExtractor = (req): Promise<string> => {
+import {Request} from 'express';
+
+export const requestDataExtractor = (req: Request): Promise<string> => {
     return new Promise((resolve, reject) => {
         let body = '';
         req.on('data', (chunk: BinaryData) => {
