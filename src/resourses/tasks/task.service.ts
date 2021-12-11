@@ -52,8 +52,8 @@ export const deleteTask = (boardId: string, taskId: string): number => {
     const boardWithTasks = getBoardById(boardId);
     const result = tasks.filter(el => el.id !== taskId);
     if(result.length === tasks.length) throw{message: ERRORS.TASK_NOT_FOUND, status: STATUS_CODES.NOT_FOUND } 
-    const taskTodelete = tasks.find(el => el.id === taskId);
-    if(boardWithTasks.id !== taskTodelete.boardId) throw{message: ERRORS.TASK_FROM_ANOTHER_BOARD, status: STATUS_CODES.BAD_REQUEST };
+    const taskToDelete = tasks.find(el => el.id === taskId);
+    if(boardWithTasks.id !== taskToDelete?.boardId) throw{message: ERRORS.TASK_FROM_ANOTHER_BOARD, status: STATUS_CODES.BAD_REQUEST };
     taskModify(result);
     return STATUS_CODES.NO_CONTENT;
 }

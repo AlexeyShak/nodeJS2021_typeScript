@@ -21,18 +21,18 @@ export const postObjValidator = (obj: IUserCreate): void => {
 };
 
 
-export const putObjValidator = (obj: IUserUpdate): string => {
+export const putObjValidator = (obj: IUserUpdate): void => {
     if(typeof obj !== 'object'){
-        return ERRORS.NOT_AN_OBJECT;
+        throw ERRORS.NOT_AN_OBJECT;
     }
     if(Object.prototype.hasOwnProperty.call(obj, 'name') && typeof obj.name !== 'string'){
-        return ERRORS.NAME_NOT_A_STRING;
+        throw ERRORS.NAME_NOT_A_STRING;
     }
     if(Object.prototype.hasOwnProperty.call(obj, 'login') && typeof obj.login !== 'string'){
-        return  ERRORS.LOGIN_IS_NOT_A_STRING;
+        throw  ERRORS.LOGIN_IS_NOT_A_STRING;
     }
     if(Object.prototype.hasOwnProperty.call(obj, 'password') && typeof obj.password !== 'string'){
-        return ERRORS.PASSWORD_NOT_STRING;
+        throw ERRORS.PASSWORD_NOT_STRING;
     }
 
 };

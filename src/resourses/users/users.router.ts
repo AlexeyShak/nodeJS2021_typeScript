@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { IncomingMessage, ServerResponse } from 'http';
 import { REQUEST_METHODS, STATUS_CODES } from "../../constants/constants";
 import { ERRORS } from "../../constants/errors";
 import { requestDataExtractor } from "../../helpers/request";
@@ -6,18 +6,20 @@ import { sendResponse } from "../../helpers/response";
 import { IUserCreate, IUserUpdate } from "../../interfaces/users";
 import { createUser, deleteUser, getAllUsers, getUserById, updateUser } from "./users.service";
 import {postObjValidator, putObjValidator} from "../../validators/userValidator"
+import { IError } from '../../interfaces/errors';
 
 
 const uuidValidator = /(\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b)/;
 const urlValidator = /\/users\/.+/; 
 
-export const usersController = async (req: Request, res: Response): Promise<void> => {
+export const usersController = async (req: IncomingMessage, res: ServerResponse): Promise<void> => {
+    const url = req.url as string;
     try {
         if(req.method === REQUEST_METHODS.GET && req.url === '/users' ){
             return sendResponse(res, STATUS_CODES.OK, getAllUsers());
         }
-        if(req.method === REQUEST_METHODS.GET && urlValidator.test(req.url)){
-            const userId: string = req.url.split('/')[2];
+        if(req.method === REQUEST_METHODS.GET && urlValidator.test(url)){
+            const userId: string = url.split('/')[2];
             if(!uuidValidator.test(userId)){
                 return sendResponse(res, STATUS_CODES.BAD_REQUEST, ERRORS.WRONG_ID_FORMAT);  
             }
@@ -37,8 +39,8 @@ export const usersController = async (req: Request, res: Response): Promise<void
                const user = createUser(dataObj)
                return sendResponse(res, STATUS_CODES.CREATED, user)
         }
-        if(req.method === REQUEST_METHODS.PUT && urlValidator.test(req.url)){
-            const userId: string = req.url.split('/')[2];
+        if(req.method === REQUEST_METHODS.PUT && urlValidator.test(url)){
+            const userId: string = url.split('/')[2];
             if(!uuidValidator.test(userId)){
                 return sendResponse(res, STATUS_CODES.BAD_REQUEST, ERRORS.WRONG_ID_FORMAT);  
             }
@@ -53,8 +55,8 @@ export const usersController = async (req: Request, res: Response): Promise<void
                const user = updateUser(dataObj, userId);
                return sendResponse(res, STATUS_CODES.OK, user);
         }
-        if(req.method === REQUEST_METHODS.DELETE && urlValidator.test(req.url)){
-            const userId: string = req.url.split('/')[2];
+        if(req.method === REQUEST_METHODS.DELETE && urlValidator.test(url)){
+            const userId: string = url.split('/')[2];
             if(!uuidValidator.test(userId)){
                 return sendResponse(res, STATUS_CODES.BAD_REQUEST, ERRORS.WRONG_ID_FORMAT);
             }
@@ -64,9 +66,10 @@ export const usersController = async (req: Request, res: Response): Promise<void
             }
             return sendResponse(res, deletionResult);
         }
-    } catch (e) {
-        const status = e.status ? e.status : STATUS_CODES.SERVER_ERROR;
-        sendResponse(res, status, e);
+    } catch (e: unknown) {
+        const transformedE = e as IError;
+        const status = transformedE.status ? transformedE.status : STATUS_CODES.SERVER_ERROR;
+        sendResponse(res, status, transformedE);
     }
 
    

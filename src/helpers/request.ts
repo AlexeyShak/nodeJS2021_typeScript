@@ -1,6 +1,6 @@
-import {Request} from 'express';
+import { IncomingMessage } from 'http';
 
-export const requestDataExtractor = (req: Request): Promise<string> => {
+export const requestDataExtractor = (req: IncomingMessage): Promise<string> => {
     return new Promise((resolve, reject) => {
         let body = '';
         req.on('data', (chunk: BinaryData) => {

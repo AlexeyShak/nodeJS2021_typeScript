@@ -7,8 +7,9 @@
       "moduleResolution": "node",
       "sourceMap": true,
       "outDir": "dist",
+      "noImplicitAny": true,
+      "strict": true
     },
-
     "lib": ["es2015"],
     "exclude": ["node_modules", "dist"],
     "watchOptions": {

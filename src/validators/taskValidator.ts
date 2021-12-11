@@ -22,7 +22,7 @@ export const putTaskObjValidator = (obj: ITaskUpdate): void => {
     if(Object.prototype.hasOwnProperty.call(obj, 'title') && typeof obj.title !== 'string') throw {message: ERRORS.TITLE_NOT_A_STRING, status: STATUS_CODES.BAD_REQUEST};
     if(Object.prototype.hasOwnProperty.call(obj, 'order') && typeof obj.order !== 'number') throw {message: ERRORS.ORDER_IS_NOT_A_NUMBER, status: STATUS_CODES.BAD_REQUEST};
     if(Object.prototype.hasOwnProperty.call(obj, 'description') && typeof obj.description !== 'string') throw {message: ERRORS.DESCRIPTION_IS_NOT_A_STRING, status: STATUS_CODES.BAD_REQUEST};
-    if(Object.prototype.hasOwnProperty.call(obj, 'userId') && !uuidValidator.test(obj.userId) && obj.userId !== null) throw {message: ERRORS.USERID_IS_NOT_A_STRING_OR_NULL, status: STATUS_CODES.BAD_REQUEST};
-    if(Object.prototype.hasOwnProperty.call(obj, 'columnId') && !uuidValidator.test(obj.columnId) && obj.columnId !== null) throw {message: ERRORS.WRONG_ID_FORMAT, status: STATUS_CODES.BAD_REQUEST};
-    if(Object.prototype.hasOwnProperty.call(obj, 'boardId') && !uuidValidator.test(obj.boardId)) throw {message: ERRORS.WRONG_ID_FORMAT, status: STATUS_CODES.BAD_REQUEST};
+    if(Object.prototype.hasOwnProperty.call(obj, 'userId') && !uuidValidator.test(obj.userId as string) && obj.userId !== null) throw {message: ERRORS.USERID_IS_NOT_A_STRING_OR_NULL, status: STATUS_CODES.BAD_REQUEST};
+    if(Object.prototype.hasOwnProperty.call(obj, 'columnId') && !uuidValidator.test(obj.columnId as string) && obj.columnId !== null) throw {message: ERRORS.WRONG_ID_FORMAT, status: STATUS_CODES.BAD_REQUEST};
+    if(Object.prototype.hasOwnProperty.call(obj, 'boardId') && !uuidValidator.test(obj.boardId as string)) throw {message: ERRORS.WRONG_ID_FORMAT, status: STATUS_CODES.BAD_REQUEST};
 };

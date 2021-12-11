@@ -1,6 +1,5 @@
-import * as http from 'http';
+import { createServer, IncomingMessage, ServerResponse } from 'http';
 import dotenv from 'dotenv';
-import { Request, Response } from 'express';
 
 import { boardsController } from './resourses/boards/board.router';
 import { tasksController } from './resourses/tasks/tasks.router';
@@ -9,9 +8,9 @@ import { usersController } from './resourses/users/users.router';
 dotenv.config();
 
 console.log('port: ', process.env.PORT);
-export const app = http.createServer((request: Request, response: Response) => {
+export const app = createServer((request: IncomingMessage, response: ServerResponse) => {
     try{
-        const {url} = request;
+        const url = request.url as string;
         console.log(request.method, ': ', url);
         if(url.startsWith('/users')){
             return usersController(request, response);
