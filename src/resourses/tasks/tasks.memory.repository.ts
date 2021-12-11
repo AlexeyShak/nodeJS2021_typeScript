@@ -1,8 +1,7 @@
 import { ITask } from "../../interfaces/tasks";
 
-const {v4: uuidv4} = require('uuid');
 
-export let tasks:ITask[]= [{
+export let tasks: ITask[]= [{
     id: 'c8f746c3-7089-4abc-af07-000000000000',
     title: 'Random title',
     order: 1,
@@ -21,13 +20,12 @@ export let tasks:ITask[]= [{
     columnId: "22222222-0000-0000-0000-000000000000"
 }
 ];
- export const getTasks = ():ITask[] =>{
-    return tasks;
- }
 
- export const taskFilter = (boardId:string):void =>{
+export const getTasks = (): ITask[] =>tasks
+
+export const taskFilter = (boardId: string): void =>{
     tasks = tasks.filter(el => el.boardId !== boardId)
  }
-export const taskModify = (data:ITask[]):void =>{
+export const taskModify = (data: ITask[]): void =>{
     tasks = data;
 }

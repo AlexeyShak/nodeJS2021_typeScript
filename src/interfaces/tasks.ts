@@ -1,5 +1,4 @@
-export interface ITask extends ITaskCreate{
-}
+export type ITask = ITaskCreate
 export interface ITaskCreate{
     id?: string,
     title: string,

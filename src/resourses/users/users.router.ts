@@ -33,8 +33,8 @@ export const usersController = async (req, res) => {
             return sendResponse(res, STATUS_CODES.SERVER_ERROR, ERRORS.JSON_PARSE_ERR);
            }
                postObjValidator(dataObj);
-               createUser(dataObj)
-               return sendResponse(res, STATUS_CODES.CREATED, dataObj)
+               const user = createUser(dataObj)
+               return sendResponse(res, STATUS_CODES.CREATED, user)
         }
         if(req.method ===REQUEST_METHODS.PUT && urlValidator.test(req.url)){
             const userId:string = req.url.split('/')[2];
@@ -49,14 +49,14 @@ export const usersController = async (req, res) => {
             return sendResponse(res, STATUS_CODES.SERVER_ERROR, ERRORS.JSON_PARSE_ERR);
             }
                putObjValidator(dataObj);
-               let user = updateUser(dataObj, userId);
-               return sendResponse(res, STATUS_CODES.CREATED, user);
+               const user = updateUser(dataObj, userId);
+               return sendResponse(res, STATUS_CODES.OK, user);
         }
-        else if(req.method === REQUEST_METHODS.DELETE && urlValidator.test(req.url)){
+        if(req.method === REQUEST_METHODS.DELETE && urlValidator.test(req.url)){
             const userId: string = req.url.split('/')[2];
             if(!uuidValidator.test(userId)){
                 return sendResponse(res, STATUS_CODES.BAD_REQUEST, ERRORS.WRONG_ID_FORMAT);
-            };
+            }
             const deletionResult = deleteUser(userId);
             if(typeof deletionResult === 'string'){
                 return sendResponse(res, STATUS_CODES.NOT_FOUND, deletionResult);

@@ -12,9 +12,7 @@ let boards:IBoard[] = [{
 }
 ];
 
-export const getBoards = ():IBoard[] =>{
-    return boards;
-}
+export const getBoards = ():IBoard[] =>boards
 export const setBoards = (data:IBoard[]):void => {
     boards = data;
 }

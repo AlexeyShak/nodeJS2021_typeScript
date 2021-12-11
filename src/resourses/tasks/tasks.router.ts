@@ -14,7 +14,7 @@ const taskIdUrlValidator = /\/boards\/.+\/tasks\/.+/;
 
 export const tasksController = async (req, res) =>{ 
     try {
-        if(req.method === REQUEST_METHODS.GET && req.url.endsWith('tasks')){
+        if(req.method === REQUEST_METHODS.GET && req.url.endsWith('/tasks')){
             const boardId:string = req.url.split('/')[2];
             if(!uuidValidator.test(boardId)){
             return sendResponse(res, STATUS_CODES.BAD_REQUEST, ERRORS.WRONG_ID_FORMAT);
@@ -22,6 +22,7 @@ export const tasksController = async (req, res) =>{
             const getResult = getAllTasks(boardId);
             return sendResponse(res, STATUS_CODES.OK, getResult);
         }
+        
         if(req.method === REQUEST_METHODS.GET && taskIdUrlValidator.test(req.url)){
             const boardId:string = req.url.split('/')[2];
             if(!uuidValidator.test(boardId)){
@@ -34,7 +35,8 @@ export const tasksController = async (req, res) =>{
             const user = getTaskById(boardId, taskId);
             return sendResponse(res, STATUS_CODES.OK, user);
         }
-        if(req.method === REQUEST_METHODS.POST && req.url === '/boards'){
+
+        if(req.method === REQUEST_METHODS.POST && req.url.endsWith('/tasks')){
             const boardId:string = req.url.split('/')[2];
             if(!uuidValidator.test(boardId)){
                 return sendResponse(res, STATUS_CODES.BAD_REQUEST, ERRORS.WRONG_ID_FORMAT);  
@@ -46,31 +48,36 @@ export const tasksController = async (req, res) =>{
            } catch(e) {
             return sendResponse(res, STATUS_CODES.SERVER_ERROR, ERRORS.JSON_PARSE_ERR);
            }
-               postTaskObjValidator(taskObj);
-               const task = createTask(taskObj, boardId)
-               return sendResponse(res, STATUS_CODES.CREATED, task)
+            postTaskObjValidator(taskObj);
+            const task = createTask(taskObj, boardId)
+            return sendResponse(res, STATUS_CODES.CREATED, task)
         }
-        if(req.method === REQUEST_METHODS.PUT && taskIdUrlValidator.test(req.url)){
-            const boardId:string = req.url.split('/')[2];
+
+        if(req.method === REQUEST_METHODS.PUT && taskIdUrlValidator.test(req.url)) {
+            const boardId: string = req.url.split('/')[2];
             if(!uuidValidator.test(boardId)){
                 return sendResponse(res, STATUS_CODES.BAD_REQUEST, ERRORS.WRONG_ID_FORMAT);  
             }
-            const taskId:string = req.url.split('/')[4];
-            if(!uuidValidator.test(taskId)){
-            return sendResponse(res, STATUS_CODES.BAD_REQUEST, ERRORS.WRONG_ID_FORMAT);  
+
+            const taskId: string = req.url.split('/')[4];
+            if(!uuidValidator.test(taskId)) {
+                return sendResponse(res, STATUS_CODES.BAD_REQUEST, ERRORS.WRONG_ID_FORMAT);  
             }
+
             const data = await requestDataExtractor(req);
             let taskObj: ITaskUpdate;
             try {
                 taskObj = JSON.parse(data);
             } catch(e) {
-            return sendResponse(res, STATUS_CODES.SERVER_ERROR, ERRORS.JSON_PARSE_ERR);
+                return sendResponse(res, STATUS_CODES.SERVER_ERROR, ERRORS.JSON_PARSE_ERR);
             }
-               putTaskObjValidator(taskObj);
-               let task = updateTask(taskObj, boardId, taskId);
-               return sendResponse(res, STATUS_CODES.OK, task);
+            
+            putTaskObjValidator(taskObj);
+            const task = updateTask(taskObj, boardId, taskId);
+            return sendResponse(res, STATUS_CODES.OK, task);
         }
-        else if(req.method === REQUEST_METHODS.DELETE && taskIdUrlValidator.test(req.url)){
+
+        if(req.method === REQUEST_METHODS.DELETE && taskIdUrlValidator.test(req.url)){
             const boardId:string = req.url.split('/')[2];
             if(!uuidValidator.test(boardId)){
                 return sendResponse(res, STATUS_CODES.BAD_REQUEST, ERRORS.WRONG_ID_FORMAT);  

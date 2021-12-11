@@ -35,8 +35,8 @@ export const boardsController = async (req, res) =>{
             return sendResponse(res, STATUS_CODES.SERVER_ERROR, ERRORS.JSON_PARSE_ERR);
            }
                postBoardObjValidator(boardObj);
-               createBoard(boardObj)
-               return sendResponse(res, STATUS_CODES.CREATED, boardObj)
+               const board = createBoard(boardObj)
+               return sendResponse(res, STATUS_CODES.CREATED, board)
         }
         if(req.method ===REQUEST_METHODS.PUT && urlValidator.test(req.url)){
             const boardId:string = req.url.split('/')[2];
@@ -51,14 +51,14 @@ export const boardsController = async (req, res) =>{
             return sendResponse(res, STATUS_CODES.SERVER_ERROR, ERRORS.JSON_PARSE_ERR);
             }
                putBoardObjValidator(boardObj);
-               let board = updateBoard(boardObj, boardId);
+               const board = updateBoard(boardObj, boardId);
                return sendResponse(res, STATUS_CODES.OK, board);
         }
-        else if(req.method === REQUEST_METHODS.DELETE && urlValidator.test(req.url)){
+        if(req.method === REQUEST_METHODS.DELETE && urlValidator.test(req.url)){
             const boardId: string = req.url.split('/')[2];
             if(!uuidValidator.test(boardId)){
                 return sendResponse(res, STATUS_CODES.BAD_REQUEST, ERRORS.WRONG_ID_FORMAT);
-            };
+            }
             const deletionResult = deleteBoard(boardId);
             if(typeof deletionResult === 'string'){
                 return sendResponse(res, STATUS_CODES.NOT_FOUND, deletionResult);

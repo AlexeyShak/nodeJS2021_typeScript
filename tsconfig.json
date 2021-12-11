@@ -6,13 +6,14 @@
       "target": "es6",
       "moduleResolution": "node",
       "sourceMap": true,
-      "outDir": "dist"
+      "outDir": "dist",
     },
+
     "lib": ["es2015"],
     "exclude": ["node_modules", "dist"],
     "watchOptions": {
         "watchFile": "useFsEvents",
         "watchDirectory": "useFsEvents",
-        "excludeDirectories": ["**/node_modules", "dist"],
+        "excludeDirectories": ["**/node_modules", "**/dist"],
     }
   }
