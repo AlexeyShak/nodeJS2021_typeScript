@@ -20,6 +20,10 @@ export const postObjValidator = (obj: IUserCreate): void => {
 
 };
 
+/**
+ * Method to validate updated user
+ * @param obj instance of IUserUpdate 
+ */
 
 export const putObjValidator = (obj: IUserUpdate): void => {
     if(typeof obj !== 'object'){

@@ -1,4 +1,4 @@
-# RS School REST service
+# RS School TypeScript
 
 ## Prerequisites
 
@@ -11,6 +11,11 @@
 git clone {repository URL}
 ```
 
+## Checkout to development branch
+
+```
+git checkout development
+```
 ## Installing NPM modules
 
 ```
@@ -20,7 +25,7 @@ npm install
 ## Running application
 
 ```
-npm start
+npm run start
 ```
 
 After starting the app on port (4000 as default) you can open
@@ -34,7 +39,7 @@ After application running open new terminal and enter:
 To run all tests without authorization
 
 ```
-npm test
+npm run test
 ```
 
 To run only one of all test suites (users, boards or tasks)
