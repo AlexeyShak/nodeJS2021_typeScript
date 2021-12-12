@@ -21,6 +21,7 @@ npm install
 
 ```
 npm run start
+note: might need double start (ctrl+C, npm run start)
 ```
 
 After starting the app on port (4000 as default) you can open
