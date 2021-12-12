@@ -13,7 +13,11 @@ export let users: IUser[] = [{
     login: 'login',
     password: 'password'  
 }];
-
+ /**
+ * Method to modify User with responsed data
+ * @param data - modyfied data instance of IUser[]
+ * @returns void
+ */
 export const usersModify =(data:IUser[]):void =>{
     users = data;
 }

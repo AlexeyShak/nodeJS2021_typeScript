@@ -11,11 +11,20 @@ let boards: IBoard[] = [{
     columns: []
 }
 ];
-
+/**
+ * Method to return boards
+ * @param none
+ * @returns all bords instance of IBoard[] or empty array
+ */
 export const getBoards = (): IBoard[] => {
     return boards; 
 }
 
+/**
+ * Method assign a data value to bards
+ * @param data instance of IBoard[]
+ * @returns void
+ */
 export const setBoards = (data: IBoard[]): void => {
     boards = data;
 }

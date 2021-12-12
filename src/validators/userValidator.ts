@@ -1,7 +1,11 @@
 import { STATUS_CODES } from "../constants/constants";
 import { IUserCreate, IUserUpdate } from "../interfaces/users";
 import { ERRORS } from "../constants/errors";
-
+/**
+ * Method to validate created user
+ * @param obj instance of IUserCreate
+ * @returns void
+ */
 export const postObjValidator = (obj: IUserCreate): void => {
 
     if(typeof obj !== 'object') throw {message: ERRORS.NOT_AN_OBJECT, status: STATUS_CODES.BAD_REQUEST};
@@ -22,9 +26,9 @@ export const postObjValidator = (obj: IUserCreate): void => {
 
 /**
  * Method to validate updated user
- * @param obj instance of IUserUpdate 
+ * @param obj instance of IUserUpdate
+ * @returns void
  */
-
 export const putObjValidator = (obj: IUserUpdate): void => {
     if(typeof obj !== 'object'){
         throw ERRORS.NOT_AN_OBJECT;

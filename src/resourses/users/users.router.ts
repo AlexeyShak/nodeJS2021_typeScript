@@ -12,6 +12,12 @@ import { IError } from '../../interfaces/errors';
 const uuidValidator = /(\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b)/;
 const urlValidator = /\/users\/.+/; 
 
+/**
+ * Module to controll operations with users
+ * @param req - request from user
+ * @param reply - reply to user
+ * @return promise with void
+ */
 export const usersController = async (req: IncomingMessage, res: ServerResponse): Promise<void> => {
     const url = req.url as string;
     try {

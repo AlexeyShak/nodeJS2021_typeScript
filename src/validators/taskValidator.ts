@@ -5,6 +5,11 @@ import { ITask, ITaskUpdate } from '../interfaces/tasks';
 
 const uuidValidator = /(\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b)/;
 
+/**
+ * Method to validate created task
+ * @param obj instance of ITask
+ * @returns void
+ */
 export const postTaskObjValidator = (obj: ITask): void => {
     if(typeof obj !== 'object') throw {message: ERRORS.NOT_AN_OBJECT, status: STATUS_CODES.BAD_REQUEST} ;
     if(!Object.prototype.hasOwnProperty.call(obj, 'title')) throw {message: ERRORS.TITLE_NOT_ENTERED, status: STATUS_CODES.BAD_REQUEST} ;
@@ -17,6 +22,11 @@ export const postTaskObjValidator = (obj: ITask): void => {
     if((typeof obj.userId !== 'string' && obj.userId !== null)) throw {message: ERRORS.USERID_IS_NOT_A_STRING_OR_NULL, status: STATUS_CODES.BAD_REQUEST};
 };
 
+/**
+ * Method to validate updated task
+ * @param obj instance of ITaskUpdate
+ * @returns void
+ */
 export const putTaskObjValidator = (obj: ITaskUpdate): void => {
     if(typeof obj !== 'object') throw {message: ERRORS.NOT_AN_OBJECT, status: STATUS_CODES.BAD_REQUEST};
     if(Object.prototype.hasOwnProperty.call(obj, 'title') && typeof obj.title !== 'string') throw {message: ERRORS.TITLE_NOT_A_STRING, status: STATUS_CODES.BAD_REQUEST};

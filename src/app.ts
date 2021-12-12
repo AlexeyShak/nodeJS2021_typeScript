@@ -7,6 +7,13 @@ import { usersController } from './resourses/users/users.router';
 
 dotenv.config();
 
+/**
+ * Creates server
+ * @param req - request from user
+ * @param reply - reply to user
+ * @return  error or requested data
+ */
+
 console.log('port: ', process.env.PORT);
 export const app = createServer((request: IncomingMessage, response: ServerResponse) => {
     try{
