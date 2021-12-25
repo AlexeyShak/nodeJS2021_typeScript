@@ -34,7 +34,6 @@ export const app = createServer((request: IncomingMessage, response: ServerRespo
     try{
         const url = request.url as string;
         const time = new Date().getTime();
-        console.log(request.method, ': ', url);
         if(url.startsWith('/users')){
             return usersController(request, response, time);
         }

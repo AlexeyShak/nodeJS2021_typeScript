@@ -4,21 +4,19 @@ import { IncomingMessage } from 'http';
 import { LOG_LEVELS, REQUEST_METHODS } from '../constants/constants';
 import { IError } from '../interfaces/errors';
 
-export const fsLogger = (path:string) => {
-    const oldLog = console.log;
-    const fsLog = fs.createWriteStream(path, {flags: 'a'});
-    console.log = (... data) => {
-        oldLog.apply(console, data);
-        fsLog.write(data.join('\n'));
-    }
-}
 
 export const logLogger = (logLevel: LOG_LEVELS, data:any) => {
     if(!!process.env.LOG_LEVEL && logLevel < parseInt(process.env.LOG_LEVEL)){
         console.log('No logs of requested LOG_LEVEL(',process.env.LOG_LEVEL,')')
     }
     if(process.env.LOG_IN_FILE){
-        fsLogger('logs.txt');
+        if(logLevel === 4){
+            const fsLog = fs.createWriteStream('errorlogs.txt', {flags: 'a'});
+            fsLog.write(data + '\n');
+        }
+        const fsLog = fs.createWriteStream('logs.txt', {flags: 'a'});
+        fsLog.write(data + '\n');
+        
     }
     console.log(data);
 }
@@ -33,12 +31,13 @@ export const loggerSuccess =  (logLevel: LOG_LEVELS, req: IncomingMessage, statu
         }
         query.push(url.split('?')[1]);
     }
-    console.log(query);
     let logSuccessStr = `${req.method} ${colors.green(status)} ${processTime}ms ${url}
-    query: ${query} `;
+    query: ${query} 
+    `;
     if(req.method === REQUEST_METHODS.POST || req.method === REQUEST_METHODS.PUT){
         logSuccessStr += `
-    body: ${data}`;
+    body: ${data}
+    `;
     }
     logLogger(logLevel, logSuccessStr);
 }
@@ -51,7 +50,8 @@ export const loggerErrors =  (logLevel: LOG_LEVELS, req: IncomingMessage, status
     let error = '';
     typeof data === 'string'? error = data:error = errorObj.message;
     let logErrorStr = `${req.method} ${colors.red(status)} ${processTime}ms ${url},
-    error message: ${error}`
+    error message: ${error}
+    `
     logLogger(logLevel, logErrorStr);
 }
 

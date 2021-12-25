@@ -1,12 +1,3 @@
-GET [32m200[39m 3ms /users
-    query:  
-    
-GET [32m200[39m 0ms /users
-    query:  
-    
-GET [32m200[39m 0ms /users
-    query:  
-    
 GET [31m404[39m 3ms /users/73dfa0d7-e233-4762-9037-5ac8f433c970,
     error message: User with requested ID not found. Please check ID input
     

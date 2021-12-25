@@ -1,6 +1,5 @@
-const colors = require('colors/safe');;
+
 import { IncomingMessage, ServerResponse, STATUS_CODES } from 'http';
-import { type } from 'os';
 import { LOG_LEVELS, REQUEST_METHODS } from '../constants/constants';
 import { IError } from '../interfaces/errors';
 import { loggerErrors, loggerSuccess } from './logger';
