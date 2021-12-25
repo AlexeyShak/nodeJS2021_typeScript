@@ -1,9 +1,17 @@
-import { createServer, IncomingMessage, ServerResponse } from 'http';
+import { createServer, IncomingMessage, ServerResponse, STATUS_CODES } from 'http';
 import dotenv from 'dotenv';
+import process from 'process';
 
 import { boardsController } from './resourses/boards/board.router';
 import { tasksController } from './resourses/tasks/tasks.router';
 import { usersController } from './resourses/users/users.router';
+import { loggerUncaught } from './helpers/logger';
+
+
+
+process.on('unhandledRejection', (reason, promice) =>{
+    console.log('uncaught rejection: ', reason, promice);
+});
 
 dotenv.config();
 
@@ -16,21 +24,31 @@ dotenv.config();
 
 console.log('port: ', process.env.PORT);
 export const app = createServer((request: IncomingMessage, response: ServerResponse) => {
+    process.on('uncaughtException', (err, origin) =>{
+        loggerUncaught(err, origin);
+        response.writeHead(500, {
+            'Content-Type': 'application/json'
+        })
+        response.end();
+    });
     try{
         const url = request.url as string;
+        const time = new Date().getTime();
         console.log(request.method, ': ', url);
         if(url.startsWith('/users')){
-            return usersController(request, response);
+            return usersController(request, response, time);
         }
         if(url.startsWith('/boards')){
             if(url.includes('/tasks')){
-              return tasksController(request,response);
+              return tasksController(request,response, time);
             }
-          return boardsController(request, response);
+          return boardsController(request, response, time);
         }
     }catch (e){
-        console.log('error e:', e)
+        console.log('error e:', e);
         response.end(JSON.stringify(e));
     }
     response.end('petrucchoe');
 })
+
+

@@ -1,0 +1,42 @@
+GET [32m200[39m 3ms /users
+    query: 
+    body: [{"id":"73dfa0d7-e233-4762-9037-5ac8f433c971","name":"Random User","login":"login"},{"id":"73dfa0d7-e233-4762-0000-000000000000","name":"Alesha","login":"login"}]GET [32m200[39m 3ms /users
+    query: 
+    body: [{"id":"73dfa0d7-e233-4762-9037-5ac8f433c971","name":"Random User","login":"login"},{"id":"73dfa0d7-e233-4762-0000-000000000000","name":"Alesha","login":"login"}]GET [32m200[39m 3ms /users
+    query: POST [32m201[39m 5ms /users
+    query: 
+    body: {"name":"","login":"Lob","id":"d4475854-78d7-4682-aec2-5bf4989cb0ee"}PUT
+: 
+/users/73dfa0d7-e233-4762-9037-5ac8f433c970PUT [31m404[39m, 2 ms, /users/73dfa0d7-e233-4762-9037-5ac8f433c970,
+    error message: User with requested ID not found. Please check ID input PUT [31m404[39m, 2 ms, /users/73dfa0d7-e233-4762-9037-5ac8f433c970,
+    error message: User with requested ID not found. Please check ID inputPUT
+: 
+/users/73dfa0d7-e233-4762-9037-5ac8f433c970PUT
+: 
+/users/73dfa0d7-e233-4762-9037-5ac8f433c970PUT [31m404[39m, 1 ms, /users/73dfa0d7-e233-4762-9037-5ac8f433c970,
+    error message: User with requested ID not found. Please check ID inputPUT [31m404[39m, 1 ms, /users/73dfa0d7-e233-4762-9037-5ac8f433c970,
+    error message: User with requested ID not found. Please check ID inputPUT [31m404[39m, 1 ms, /users/73dfa0d7-e233-4762-9037-5ac8f433c970,
+    error message: User with requested ID not found. Please check ID inputPUT
+: 
+/users/73dfa0d7-e233-4762-9037-5ac8f433c970PUT
+: 
+/users/73dfa0d7-e233-4762-9037-5ac8f433c970PUT
+: 
+/users/73dfa0d7-e233-4762-9037-5ac8f433c970PUT [31m404[39m, 1 ms, /users/73dfa0d7-e233-4762-9037-5ac8f433c970,
+    error message: User with requested ID not found. Please check ID inputPUT [31m404[39m, 1 ms, /users/73dfa0d7-e233-4762-9037-5ac8f433c970,
+    error message: User with requested ID not found. Please check ID inputPUT [31m404[39m, 1 ms, /users/73dfa0d7-e233-4762-9037-5ac8f433c970,
+    error message: User with requested ID not found. Please check ID inputPUT [31m404[39m, 1 ms, /users/73dfa0d7-e233-4762-9037-5ac8f433c970,
+    error message: User with requested ID not found. Please check ID inputGET [32m200[39m 1ms /users
+    query:  GET
+: 
+/users/73dfa0d7-e233-4762-0000-000000000000GET [32m200[39m 0ms /users/73dfa0d7-e233-4762-0000-000000000000
+    query:  GET [32m200[39m 0ms /users/73dfa0d7-e233-4762-0000-000000000000
+    query:  GET
+: 
+/users/73dfa0d7-e233-4762-0000-00000000000GET
+: 
+/users/73dfa0d7-e233-4762-0000-00000000000GET [32m400[39m 1ms /users/73dfa0d7-e233-4762-0000-00000000000
+    query:  GET [32m400[39m 1ms /users/73dfa0d7-e233-4762-0000-00000000000
+    query:  GET [32m400[39m 1ms /users/73dfa0d7-e233-4762-0000-00000000000
+    query:  GET [31m400[39m 3ms /users/73dfa0d7-e233-4762-0000-00000000000,
+    error message: undefined

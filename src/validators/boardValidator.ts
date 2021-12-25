@@ -21,7 +21,7 @@ export const postBoardObjValidator = (obj: IBoard): void => {
  * @returns void
  */
 export const putBoardObjValidator = (obj:IBoardUpdate): void => {
-    if(typeof obj !== 'object') throw {message: ERRORS.NOT_AN_OBJECT, status: STATUS_CODES.BAD_REQUEST }; 
+    if(typeof obj !== 'object') throw {message: ERRORS.NOT_AN_OBJECT, status: STATUS_CODES.BAD_REQUEST}; 
     if(Object.prototype.hasOwnProperty.call(obj, 'title') && typeof obj.title !== 'string')throw {message: ERRORS.TITLE_NOT_A_STRING, status: STATUS_CODES.BAD_REQUEST }
     if(Object.prototype.hasOwnProperty.call(obj, 'columns') && !Array.isArray(obj.columns)) throw {message: ERRORS.COLUMNS_IS_NOT_AN_ARRAY, status: STATUS_CODES.BAD_REQUEST };
  

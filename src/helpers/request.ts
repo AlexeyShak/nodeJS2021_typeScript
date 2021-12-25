@@ -1,5 +1,6 @@
 import { IncomingMessage } from 'http';
 
+
 /**
  * Module to extract data from the response
  * @param req - reqest from server
@@ -16,6 +17,6 @@ export const requestDataExtractor = (req: IncomingMessage): Promise<string> => {
         });
         req.on('error', (e) => {
             reject(JSON.stringify(e));
-        });
+        });  
     })
 }
