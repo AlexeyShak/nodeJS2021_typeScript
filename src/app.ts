@@ -5,13 +5,12 @@ import process from 'process';
 import { boardsController } from './resourses/boards/board.router';
 import { tasksController } from './resourses/tasks/tasks.router';
 import { usersController } from './resourses/users/users.router';
-import { loggerUncaught } from './helpers/logger';
+import { loggerUncaught, loggerUnhandled, logLogger } from './helpers/logger';
+import { LOG_LEVELS } from './constants/constants';
 
 
 
-process.on('unhandledRejection', (reason, promice) =>{
-    console.log('uncaught rejection: ', reason, promice);
-});
+
 
 dotenv.config();
 
@@ -22,10 +21,17 @@ dotenv.config();
  * @return  error or requested data
  */
 
-console.log('port: ', process.env.PORT);
+logLogger(LOG_LEVELS.INFO, `port: ${process.env.PORT}`);
 export const app = createServer((request: IncomingMessage, response: ServerResponse) => {
     process.on('uncaughtException', (err, origin) =>{
         loggerUncaught(err, origin);
+        response.writeHead(500, {
+            'Content-Type': 'application/json'
+        })
+        response.end();
+    });
+    process.on('unhandledRejection', (reason: unknown, promise: Promise<unknown>) =>{
+        loggerUnhandled(reason, promise);
         response.writeHead(500, {
             'Content-Type': 'application/json'
         })

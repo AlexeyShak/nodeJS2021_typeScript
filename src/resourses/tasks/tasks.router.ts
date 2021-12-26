@@ -96,7 +96,7 @@ export const tasksController = async (req: IncomingMessage, res: ServerResponse,
             }
             const deletionResult = deleteTask(boardId, taskId);
             if(typeof deletionResult === 'string'){
-                return sendResponse(req, res, STATUS_CODES.NOT_FOUND, deletionResult);
+                return sendResponse(req, res, STATUS_CODES.NOT_FOUND, time, deletionResult);
             }
             return sendResponse(req, res, deletionResult, time);
         }

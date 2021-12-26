@@ -1,5 +1,5 @@
 import { IncomingMessage, ServerResponse } from 'http';
-import { REQUEST_METHODS, STATUS_CODES} from '../../constants/constants';
+import { LOG_LEVELS, REQUEST_METHODS, STATUS_CODES} from '../../constants/constants';
 import  { ERRORS } from '../../constants/errors';
 
 import  {sendResponse} from '../../helpers/response';
@@ -9,6 +9,7 @@ import {requestDataExtractor} from '../../helpers/request';
 import {postBoardObjValidator, putBoardObjValidator} from '../../validators/boardValidator';
 import { IBoard, IBoardUpdate } from '../../interfaces/boards';
 import { IError } from '../../interfaces/errors';
+import { logLogger } from '../../helpers/logger';
 
 const uuidValidator = /(\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b)/;
 const urlValidator = /\/boards\/.+/;
@@ -68,14 +69,12 @@ export const boardsController = async (req: IncomingMessage, res: ServerResponse
                 return sendResponse(req, res, STATUS_CODES.BAD_REQUEST, time, ERRORS.WRONG_ID_FORMAT);
             }
             const deletionResult = deleteBoard(boardId);
-            if(typeof deletionResult === 'string'){
-                return sendResponse(req, res, STATUS_CODES.NOT_FOUND, deletionResult);
-            }
-            return sendResponse(req, res, deletionResult, time,);
+            return sendResponse(req, res, deletionResult, time);
         }
     } catch (e) {
+        logLogger(LOG_LEVELS.ERROR, `error in catch ${e}`)
         const transformedE = e as IError;
-        const status = transformedE.status ? transformedE.status : STATUS_CODES.SERVER_ERROR;
+        const status = transformedE?.status ? transformedE.status : STATUS_CODES.SERVER_ERROR;
         sendResponse(req, res, status, time, transformedE);
     }
 }

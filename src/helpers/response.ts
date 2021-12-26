@@ -17,6 +17,7 @@ export const sendResponse =  (req: IncomingMessage, res: ServerResponse, status:
         'Content-Type': 'application/json'
       }
     )
+    data = data ? data : {};
     if(typeof data !== 'string' && !Object.prototype.hasOwnProperty.call(data, 'message')){
       loggerSuccess(LOG_LEVELS.INFO, req, status, time, data);
     }
