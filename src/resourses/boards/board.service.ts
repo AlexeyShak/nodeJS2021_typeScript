@@ -1,39 +1,60 @@
-const {v4: uuidv4} = require('uuid');
-
 import {ERRORS} from '../../constants/errors';
 import  {STATUS_CODES} from '../../constants/constants';
-import {boards} from './board.memory.repository';
-import {tasks} from '../tasks/tasks.memory.repository';
-import { IBoard, IBoardCreate, IBoardUpdate } from '../../interfaces/boards';
+import {getBoards, setBoards} from './board.memory.repository';
+import {taskFilter} from '../tasks/tasks.memory.repository';
+import { IBoard, IBoardUpdate } from '../../interfaces/boards';
 
-export const getAllBoards = () => boards;
+import {v4 as uuidv4} from 'uuid';
+/**
+ * Function which returns all boards to boards router
+ * @return all boards instanse of IBoard[] to boards router
+ */
 
-export const getBoardById = (boardId:string) => {
-    const result = boards.find(el => el.id === boardId);
+export const getAllBoards = () => getBoards();
+/**
+ * Function which returns board with requested ID to boards router
+ * @param boardId - part of request url instance of string
+ * @return board with requested ID instanse of IBoard
+ */
+
+export const getBoardById = (boardId: string): IBoard => {
+    const result = getBoards().find(el => el.id === boardId);
     if(!result) throw { message: ERRORS.BOARD_NOT_FOUND, status: STATUS_CODES.NOT_FOUND}
     return result;
 };
-
-export const createBoard = (boardData:IBoard) => {
+/**
+ * Function which creates new board and returns it to boards router
+ * @param boardData - requested board data instance of IBoard
+ * @return board with ID instanse of IBoard
+ */
+export const createBoard = (boardData: IBoard): IBoard => {
     boardData.id = uuidv4();
-    boards.push(boardData);
+    getBoards().push(boardData);
     return boardData;
 };
-
-export const updateBoard = (newBoardData:IBoardUpdate, boardId:string) => {
+/**
+ * Function which creates new board and returns it to boards router
+ * @param newBoardData - requested board data instance of IBoardUpdate
+ * @return updated board instanse of IBoard
+ */
+export const updateBoard = (newBoardData: IBoardUpdate, boardId: string): IBoard => {
+    const boards = getBoards();
     const result = boards.findIndex(el => el.id === boardId);
     if(result == -1) throw {message: ERRORS.BOARD_NOT_FOUND, status: STATUS_CODES.NOT_FOUND}
     boards[result].title = newBoardData.title || boards[result].title;
     boards[result].columns = newBoardData.columns || boards[result].columns;
     return boards[result];
 };
-
-export const deleteBoard = (boardId:string) => {
+/**
+ * Function which deletes board with requested ID
+ * @param newBoardData - requested boardID instance of string
+ * @return status code 'no content' instanse of number to board service
+ */
+export const deleteBoard = (boardId: string): number => {
+    const boards = getBoards();
     const result = boards.filter(el => el.id !== boardId);
-    if(result.length === boards.length){
-        return ERRORS.BOARD_NOT_FOUND
-    }
-    boards = result;
-    tasks = tasks.filter(el => el.boardId !== boardId);
+    if(result.length === boards.length) throw {message: ERRORS.BOARD_NOT_FOUND , status: STATUS_CODES.NOT_FOUND};
+    setBoards(result);
+    taskFilter(boardId);
     return STATUS_CODES.NO_CONTENT;
 }

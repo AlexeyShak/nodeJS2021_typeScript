@@ -1,18 +1,28 @@
-import * as http from 'http';
+import { createServer, IncomingMessage, ServerResponse } from 'http';
+import dotenv from 'dotenv';
+
 import { boardsController } from './resourses/boards/board.router';
 import { tasksController } from './resourses/tasks/tasks.router';
 import { usersController } from './resourses/users/users.router';
-require('dotenv').config();
 
+dotenv.config();
+
+/**
+ * Creates server
+ * @param req - request from user
+ * @param reply - reply to user
+ * @return  error or requested data
+ */
 
 console.log('port: ', process.env.PORT);
-http.createServer((request: any, response: any) => {
+export const app = createServer((request: IncomingMessage, response: ServerResponse) => {
     try{
-        const url: string = request.url;
+        const url = request.url as string;
+        console.log(request.method, ': ', url);
         if(url.startsWith('/users')){
             return usersController(request, response);
         }
-        else if(url.startsWith('/boards')){
+        if(url.startsWith('/boards')){
             if(url.includes('/tasks')){
               return tasksController(request,response);
             }
@@ -23,5 +33,4 @@ http.createServer((request: any, response: any) => {
         response.end(JSON.stringify(e));
     }
     response.end('petrucchoe');
-
-}).listen(process.env.PORT)
+})
