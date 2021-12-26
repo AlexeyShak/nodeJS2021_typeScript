@@ -11,10 +11,10 @@
 git clone {repository URL}
 ```
 
-## Checkout to development branch
+## Checkout to loggin branch
 
 ```
-git checkout development
+git checkout logging
 ```
 ## Installing NPM modules
 
@@ -58,6 +58,23 @@ To run only specific test suite with authorization (users, boards or tasks)
 
 ```
 npm run test:auth <suite name>
+```
+## Logging and Error handlig
+
+By default all logs are written to files logs.txt & errorLogs.txt. If you dont want to write logs into file please change in .env LOG_IN_FilE value to false:
+
+```
+LOG_IN_FILE=false
+```
+to chose logging level in .env file change value of LOG_LEVEL to one of following parametors:  
+
+0: all  
+1: info  
+2: warn  
+3: debug  
+4: error 
+```
+LOG_LEVEL=0 \\ to display all logs
 ```
 
 ## Development
