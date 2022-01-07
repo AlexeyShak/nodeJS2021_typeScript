@@ -13,3 +13,11 @@ export const STATUS_CODES = {
     NO_CONTENT: 204,
     BAD_REQUEST: 400
 };
+
+export enum LOG_LEVELS {
+    ALL = 0,
+    INFO = 1,
+    WARN = 2,
+    DEBUG = 3,
+    ERROR = 4
+}
