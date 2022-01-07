@@ -12,12 +12,12 @@ export const logLogger = (logLevel: LOG_LEVELS, data: object | string): void => 
     }
     else if (process.env.LOG_IN_FILE !== 'false') {
         if(logLevel === 4){
-            const fsLog = fs.createWriteStream('errorlogs.txt', {flags: 'a'});
+            const fsLog = fs.createWriteStream('logs/errorlogs.txt', {flags: 'a'});
             fsLog.write(data + '\n');
         }
-        const fsLog = fs.createWriteStream('logs.txt', {flags: 'a'});
+        const fsLog = fs.createWriteStream('logs/logs.txt', {flags: 'a'});
         fsLog.write(data + '\n');
-        console.log(data);
+        console.log('someBodyOnceToldMeTheWorldIsGonna', data);
     }
     else console.log(data);
 }
