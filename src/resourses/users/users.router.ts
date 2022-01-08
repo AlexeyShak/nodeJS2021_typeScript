@@ -8,6 +8,7 @@ import { createUser, deleteUser, getAllUsers, getUserById, updateUser } from "./
 import {postObjValidator, putObjValidator} from "../../validators/userValidator"
 import { IError } from '../../interfaces/errors';
 import { setBoards } from '../boards/board.memory.repository';
+import { exit } from 'process';
 
 
 const uuidValidator = /(\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b)/;
