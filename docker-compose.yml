@@ -10,6 +10,8 @@ services:
       - nodemodules:/src/node_modules
       - ./logs:/src/logs
     restart: always
+    networks: 
+      - net
   database:
     build: db
     ports: 
@@ -20,7 +22,17 @@ services:
     volumes: 
       - pgdata:/var/lib/postgresql/data/pgdata
     restart: always
+    networks: 
+      - net
 volumes:
   nodemodules: {}
   pgdata: {}
+networks:
+  net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.220.0/24
+
+
 
