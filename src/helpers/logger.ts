@@ -16,7 +16,7 @@ export const logLogger = (logLevel: LOG_LEVELS, data: object | string): void => 
         }
         const fsLog = fs.createWriteStream('logs/logs.txt', {flags: 'a'});
         fsLog.write(data + '\n');
-        console.log('someBodyOnceToldMeTheWorldIsGonna', data);
+        console.log( data);
     }
     else console.log(data);
 }
