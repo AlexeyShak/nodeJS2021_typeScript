@@ -1,4 +1,5 @@
 import { createServer, IncomingMessage, ServerResponse, STATUS_CODES } from 'http';
+import 'reflect-metadata';
 import dotenv from 'dotenv';
 import process from 'process';
 
@@ -13,6 +14,7 @@ import { LOG_LEVELS } from './constants/constants';
 
 
 dotenv.config();
+
 
 /**
  * Creates server

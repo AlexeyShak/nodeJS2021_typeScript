@@ -170,3 +170,25 @@ GET 404 0ms /boards/a058b8f4-6f23-42e4-9b38-482ac16f5ba2/tasks/ba918ffb-e239-431
 GET 404 0ms /boards/c600c850-ae70-4ed1-888a-2135a41afd35/tasks/375bcc91-d25c-41f8-940b-ecd0fee01c75,
     error message: Task with requested ID not found. Please check ID input
     
+GET 404 1ms /boards/d6df7031-6b89-44b5-bfbe-9ab76b14a551/tasks/d3cc6c5e-9839-4ac0-a4a3-ad828fc85749,
+    error message: Task with requested ID not found. Please check ID input
+    
+error in catch [object Object]
+GET 404 1ms /boards/14abe28e-f766-4601-83b8-fe03c95ef70d,
+    error message: Board with requested ID not found. Please check ID input
+    
+GET 404 0ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks/e6bea22b-2ea5-4701-9e16-03e1423e1686,
+    error message: Board with requested ID not found. Please check ID input
+    
+GET 404 1ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks/92d44cb9-9d7e-4682-860a-bda8e25e8287,
+    error message: Board with requested ID not found. Please check ID input
+    
+GET 404 1ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks/cc7938d1-a000-4a1f-8429-7ff4556315c5,
+    error message: Board with requested ID not found. Please check ID input
+    
+GET 404 0ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks/d5afe177-24bb-4671-a2ae-629dfb6276f8,
+    error message: Board with requested ID not found. Please check ID input
+    
+GET 404 0ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks/51102f18-f23c-4b23-bdca-3c16f73bb3ef,
+    error message: Board with requested ID not found. Please check ID input
+    

@@ -1839,3 +1839,567 @@ GET 404 0ms /boards/c600c850-ae70-4ed1-888a-2135a41afd35/tasks/375bcc91-d25c-41f
 DELETE 204 0ms /boards/c600c850-ae70-4ed1-888a-2135a41afd35
     query:  
     
+port: 4000
+GET 200 5ms /users
+    query:  
+    
+POST 201 8ms /users
+    query:  
+    
+    body: {"name":"TEST_USER","login":"test_user","id":"3a2b5795-2dc2-4c01-96f3-318ee3221e53"}
+    
+GET 200 1ms /users/3a2b5795-2dc2-4c01-96f3-318ee3221e53
+    query:  
+    
+DELETE 204 2ms /users/3a2b5795-2dc2-4c01-96f3-318ee3221e53
+    query:  
+    
+POST 201 1ms /users
+    query:  
+    
+    body: {"name":"TEST_USER","login":"test_user","id":"1867c2cf-6b44-42d4-bee6-61145d5ce944"}
+    
+DELETE 204 1ms /users/1867c2cf-6b44-42d4-bee6-61145d5ce944
+    query:  
+    
+PUT 200 2ms /users/5cb4ad84-5574-47e3-8699-9fdcfeaf0352
+    query:  
+    
+    body: {"name":"Autotest updated TEST_USER","login":"test_user","id":"5cb4ad84-5574-47e3-8699-9fdcfeaf0352","password":"T35t_P@55w0rd"}
+    
+POST 201 0ms /users
+    query:  
+    
+    body: {"name":"TEST_USER","login":"test_user","id":"5cb4ad84-5574-47e3-8699-9fdcfeaf0352"}
+    
+GET 200 0ms /users/5cb4ad84-5574-47e3-8699-9fdcfeaf0352
+    query:  
+    
+DELETE 204 0ms /users/5cb4ad84-5574-47e3-8699-9fdcfeaf0352
+    query:  
+    
+POST 201 1ms /users
+    query:  
+    
+    body: {"name":"TEST_USER","login":"test_user","id":"fc76f005-a5bd-441c-b047-280032d6aeb5"}
+    
+DELETE 204 0ms /users/fc76f005-a5bd-441c-b047-280032d6aeb5
+    query:  
+    
+POST 201 1ms /users
+    query:  
+    
+    body: {"name":"TEST_USER","login":"test_user","id":"32b3864e-9825-481c-b29f-23cf25b0cf72"}
+    
+POST 201 6ms /boards
+    query:  
+    
+    body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}],"id":"6570ba9c-7450-4434-9b42-49e0563a1eda"}
+    
+POST 201 6ms /boards/6570ba9c-7450-4434-9b42-49e0563a1eda/tasks
+    query:  
+    
+    body: {"title":"Task #1","order":1,"description":"Lorem ipsum","userId":"32b3864e-9825-481c-b29f-23cf25b0cf72","boardId":"6570ba9c-7450-4434-9b42-49e0563a1eda","id":"81f5db97-3e79-4bcd-b353-3de7a54b6226"}
+    
+POST 201 1ms /boards/6570ba9c-7450-4434-9b42-49e0563a1eda/tasks
+    query:  
+    
+    body: {"title":"Task #2","order":2,"description":"Lorem ipsum","userId":"32b3864e-9825-481c-b29f-23cf25b0cf72","boardId":"6570ba9c-7450-4434-9b42-49e0563a1eda","id":"eb542a2f-6d48-404d-a889-fbd2f6b6ac5a"}
+    
+DELETE 204 2ms /users/32b3864e-9825-481c-b29f-23cf25b0cf72
+    query:  
+    
+GET 200 2ms /boards/6570ba9c-7450-4434-9b42-49e0563a1eda/tasks/81f5db97-3e79-4bcd-b353-3de7a54b6226
+    query:  
+    
+GET 200 0ms /boards/6570ba9c-7450-4434-9b42-49e0563a1eda/tasks/eb542a2f-6d48-404d-a889-fbd2f6b6ac5a
+    query:  
+    
+DELETE 204 2ms /boards/6570ba9c-7450-4434-9b42-49e0563a1eda/tasks/eb542a2f-6d48-404d-a889-fbd2f6b6ac5a
+    query:  
+    
+DELETE 204 0ms /boards/6570ba9c-7450-4434-9b42-49e0563a1eda/tasks/81f5db97-3e79-4bcd-b353-3de7a54b6226
+    query:  
+    
+DELETE 204 8ms /boards/6570ba9c-7450-4434-9b42-49e0563a1eda
+    query:  
+    
+port: 4000
+POST 201 13ms /boards
+    query:  
+    
+    body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}],"id":"d6df7031-6b89-44b5-bfbe-9ab76b14a551"}
+    
+POST 201 3ms /boards/d6df7031-6b89-44b5-bfbe-9ab76b14a551/tasks
+    query:  
+    
+    body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"d6df7031-6b89-44b5-bfbe-9ab76b14a551","columnId":null,"id":"d3cc6c5e-9839-4ac0-a4a3-ad828fc85749"}
+    
+GET 200 0ms /boards/d6df7031-6b89-44b5-bfbe-9ab76b14a551/tasks
+    query:  
+    
+GET 200 0ms /boards/d6df7031-6b89-44b5-bfbe-9ab76b14a551/tasks
+    query:  
+    
+GET 200 0ms /boards/d6df7031-6b89-44b5-bfbe-9ab76b14a551/tasks/d3cc6c5e-9839-4ac0-a4a3-ad828fc85749
+    query:  
+    
+POST 201 0ms /boards/d6df7031-6b89-44b5-bfbe-9ab76b14a551/tasks
+    query:  
+    
+    body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"d6df7031-6b89-44b5-bfbe-9ab76b14a551","columnId":null,"id":"70f3cc57-4df0-4331-a682-342f5bbae85b"}
+    
+DELETE 204 1ms /boards/d6df7031-6b89-44b5-bfbe-9ab76b14a551/tasks/70f3cc57-4df0-4331-a682-342f5bbae85b
+    query:  
+    
+POST 201 1ms /boards/d6df7031-6b89-44b5-bfbe-9ab76b14a551/tasks
+    query:  
+    
+    body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"d6df7031-6b89-44b5-bfbe-9ab76b14a551","columnId":null,"id":"91c06a86-3766-4cae-9ba0-7db21c9b1e34"}
+    
+PUT 200 1ms /boards/d6df7031-6b89-44b5-bfbe-9ab76b14a551/tasks/91c06a86-3766-4cae-9ba0-7db21c9b1e34
+    query:  
+    
+    body: {"title":"Autotest updated task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"d6df7031-6b89-44b5-bfbe-9ab76b14a551","columnId":null,"id":"91c06a86-3766-4cae-9ba0-7db21c9b1e34"}
+    
+GET 200 0ms /boards/d6df7031-6b89-44b5-bfbe-9ab76b14a551/tasks/91c06a86-3766-4cae-9ba0-7db21c9b1e34
+    query:  
+    
+GET 200 0ms /boards/d6df7031-6b89-44b5-bfbe-9ab76b14a551/tasks/d3cc6c5e-9839-4ac0-a4a3-ad828fc85749
+    query:  
+    
+DELETE 204 0ms /boards/d6df7031-6b89-44b5-bfbe-9ab76b14a551/tasks/d3cc6c5e-9839-4ac0-a4a3-ad828fc85749
+    query:  
+    
+GET 404 1ms /boards/d6df7031-6b89-44b5-bfbe-9ab76b14a551/tasks/d3cc6c5e-9839-4ac0-a4a3-ad828fc85749,
+    error message: Task with requested ID not found. Please check ID input
+    
+DELETE 204 2ms /boards/d6df7031-6b89-44b5-bfbe-9ab76b14a551
+    query:  
+    
+POST 201 3ms /boards
+    query:  
+    
+    body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}],"id":"6de4409b-b6c0-405d-b427-0e0f5177e97a"}
+    
+GET 200 0ms /boards
+    query:  
+    
+GET 200 0ms /boards
+    query:  
+    
+GET 200 0ms /boards/6de4409b-b6c0-405d-b427-0e0f5177e97a
+    query:  
+    
+POST 201 1ms /boards
+    query:  
+    
+    body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}],"id":"31640be1-21f5-4cf4-8df6-1a648f45c192"}
+    
+DELETE 204 0ms /boards/31640be1-21f5-4cf4-8df6-1a648f45c192
+    query:  
+    
+POST 201 1ms /boards
+    query:  
+    
+    body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}],"id":"901f61e3-9ee0-4b30-a006-5d823a6ca412"}
+    
+PUT 200 2ms /boards/901f61e3-9ee0-4b30-a006-5d823a6ca412
+    query:  
+    
+    body: {"title":"Autotest updated board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}],"id":"901f61e3-9ee0-4b30-a006-5d823a6ca412"}
+    
+GET 200 0ms /boards/901f61e3-9ee0-4b30-a006-5d823a6ca412
+    query:  
+    
+DELETE 204 1ms /boards/901f61e3-9ee0-4b30-a006-5d823a6ca412
+    query:  
+    
+POST 201 0ms /boards
+    query:  
+    
+    body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}],"id":"14abe28e-f766-4601-83b8-fe03c95ef70d"}
+    
+DELETE 204 0ms /boards/14abe28e-f766-4601-83b8-fe03c95ef70d
+    query:  
+    
+error in catch [object Object]
+GET 404 1ms /boards/14abe28e-f766-4601-83b8-fe03c95ef70d,
+    error message: Board with requested ID not found. Please check ID input
+    
+POST 201 1ms /boards
+    query:  
+    
+    body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}],"id":"e8e43575-55cf-4f85-a783-179bb2b1d5e2"}
+    
+POST 201 1ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks
+    query:  
+    
+    body: {"title":"Task #5","order":5,"description":"Lorem ipsum","boardId":"e8e43575-55cf-4f85-a783-179bb2b1d5e2","userId":null,"columnId":null,"id":"92d44cb9-9d7e-4682-860a-bda8e25e8287"}
+    
+POST 201 2ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks
+    query:  
+    
+    body: {"title":"Task #2","order":2,"description":"Lorem ipsum","boardId":"e8e43575-55cf-4f85-a783-179bb2b1d5e2","userId":null,"columnId":null,"id":"cc7938d1-a000-4a1f-8429-7ff4556315c5"}
+    
+POST 201 2ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks
+    query:  
+    
+    body: {"title":"Task #1","order":1,"description":"Lorem ipsum","boardId":"e8e43575-55cf-4f85-a783-179bb2b1d5e2","userId":null,"columnId":null,"id":"e6bea22b-2ea5-4701-9e16-03e1423e1686"}
+    
+POST 201 1ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks
+    query:  
+    
+    body: {"title":"Task #3","order":3,"description":"Lorem ipsum","boardId":"e8e43575-55cf-4f85-a783-179bb2b1d5e2","userId":null,"columnId":null,"id":"d5afe177-24bb-4671-a2ae-629dfb6276f8"}
+    
+POST 201 0ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks
+    query:  
+    
+    body: {"title":"Task #4","order":4,"description":"Lorem ipsum","boardId":"e8e43575-55cf-4f85-a783-179bb2b1d5e2","userId":null,"columnId":null,"id":"51102f18-f23c-4b23-bdca-3c16f73bb3ef"}
+    
+GET 200 1ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks/e6bea22b-2ea5-4701-9e16-03e1423e1686
+    query:  
+    
+GET 200 0ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks/51102f18-f23c-4b23-bdca-3c16f73bb3ef
+    query:  
+    
+GET 200 0ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks/cc7938d1-a000-4a1f-8429-7ff4556315c5
+    query:  
+    
+GET 200 0ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks/92d44cb9-9d7e-4682-860a-bda8e25e8287
+    query:  
+    
+GET 200 0ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks/d5afe177-24bb-4671-a2ae-629dfb6276f8
+    query:  
+    
+DELETE 204 0ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2
+    query:  
+    
+GET 404 0ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks/e6bea22b-2ea5-4701-9e16-03e1423e1686,
+    error message: Board with requested ID not found. Please check ID input
+    
+GET 404 1ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks/92d44cb9-9d7e-4682-860a-bda8e25e8287,
+    error message: Board with requested ID not found. Please check ID input
+    
+GET 404 1ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks/cc7938d1-a000-4a1f-8429-7ff4556315c5,
+    error message: Board with requested ID not found. Please check ID input
+    
+GET 404 0ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks/51102f18-f23c-4b23-bdca-3c16f73bb3ef,
+    error message: Board with requested ID not found. Please check ID input
+    
+GET 404 0ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks/d5afe177-24bb-4671-a2ae-629dfb6276f8,
+    error message: Board with requested ID not found. Please check ID input
+    
+DELETE 204 0ms /boards/6de4409b-b6c0-405d-b427-0e0f5177e97a
+    query:  
+    
+GET 200 2ms /users
+    query:  
+    
+POST 201 4ms /users
+    query:  
+    
+    body: {"name":"TEST_USER","login":"test_user","id":"35e4316a-bb2b-456d-85ee-ba054b459d0b"}
+    
+GET 200 3ms /users/35e4316a-bb2b-456d-85ee-ba054b459d0b
+    query:  
+    
+DELETE 204 1ms /users/35e4316a-bb2b-456d-85ee-ba054b459d0b
+    query:  
+    
+POST 201 1ms /users
+    query:  
+    
+    body: {"name":"TEST_USER","login":"test_user","id":"f5c5984b-b674-4f52-8f4c-1e5901e5daa6"}
+    
+DELETE 204 0ms /users/f5c5984b-b674-4f52-8f4c-1e5901e5daa6
+    query:  
+    
+POST 201 0ms /users
+    query:  
+    
+    body: {"name":"TEST_USER","login":"test_user","id":"1360a705-6229-4b88-bfcc-da9108f0dfde"}
+    
+PUT 200 1ms /users/1360a705-6229-4b88-bfcc-da9108f0dfde
+    query:  
+    
+    body: {"name":"Autotest updated TEST_USER","login":"test_user","id":"1360a705-6229-4b88-bfcc-da9108f0dfde","password":"T35t_P@55w0rd"}
+    
+GET 200 1ms /users/1360a705-6229-4b88-bfcc-da9108f0dfde
+    query:  
+    
+DELETE 204 0ms /users/1360a705-6229-4b88-bfcc-da9108f0dfde
+    query:  
+    
+POST 201 0ms /users
+    query:  
+    
+    body: {"name":"TEST_USER","login":"test_user","id":"1ad63848-501a-4173-b013-0bb281a5c31a"}
+    
+DELETE 204 1ms /users/1ad63848-501a-4173-b013-0bb281a5c31a
+    query:  
+    
+POST 201 1ms /users
+    query:  
+    
+    body: {"name":"TEST_USER","login":"test_user","id":"aed31f8d-ca51-4c59-b31a-82d1ca5acdef"}
+    
+POST 201 0ms /boards
+    query:  
+    
+    body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}],"id":"6aafa4ff-6b63-4b74-9983-9732ffc91db3"}
+    
+POST 201 1ms /boards/6aafa4ff-6b63-4b74-9983-9732ffc91db3/tasks
+    query:  
+    
+    body: {"title":"Task #2","order":2,"description":"Lorem ipsum","userId":"aed31f8d-ca51-4c59-b31a-82d1ca5acdef","boardId":"6aafa4ff-6b63-4b74-9983-9732ffc91db3","id":"ef4b0d43-efb4-476a-a537-b6d264d91bbb"}
+    
+POST 201 1ms /boards/6aafa4ff-6b63-4b74-9983-9732ffc91db3/tasks
+    query:  
+    
+    body: {"title":"Task #1","order":1,"description":"Lorem ipsum","userId":"aed31f8d-ca51-4c59-b31a-82d1ca5acdef","boardId":"6aafa4ff-6b63-4b74-9983-9732ffc91db3","id":"60ee1645-a81b-4fbf-bd29-2962fd13c244"}
+    
+DELETE 204 1ms /users/aed31f8d-ca51-4c59-b31a-82d1ca5acdef
+    query:  
+    
+GET 200 0ms /boards/6aafa4ff-6b63-4b74-9983-9732ffc91db3/tasks/60ee1645-a81b-4fbf-bd29-2962fd13c244
+    query:  
+    
+GET 200 0ms /boards/6aafa4ff-6b63-4b74-9983-9732ffc91db3/tasks/ef4b0d43-efb4-476a-a537-b6d264d91bbb
+    query:  
+    
+DELETE 204 0ms /boards/6aafa4ff-6b63-4b74-9983-9732ffc91db3/tasks/ef4b0d43-efb4-476a-a537-b6d264d91bbb
+    query:  
+    
+DELETE 204 0ms /boards/6aafa4ff-6b63-4b74-9983-9732ffc91db3/tasks/60ee1645-a81b-4fbf-bd29-2962fd13c244
+    query:  
+    
+DELETE 204 1ms /boards/6aafa4ff-6b63-4b74-9983-9732ffc91db3
+    query:  
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+GET 200 7ms /users
+    query:  
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+GET 200 6ms /users
+    query:  
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+GET 200 6ms /users
+    query:  
+    
+GET 200 1ms /users
+    query:  
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+GET 200 98ms /users
+    query:  
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+POST 201 121ms /users
+    query:  
+    
+    body: {"id":"17c0ee5e-5141-41fc-ae7e-67bd4791f33d","name":"Uno","login":"login uno","password":"password uno"}
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+POST 201 103ms /users
+    query:  
+    
+    body: {"id":"55652fe0-3cad-4369-8889-b25a0a3e60d3","name":"Uno2","login":"login uno","password":"password uno"}
+    
+GET 200 68ms /users
+    query:  
+    
+DELETE 204 70ms /users/55652fe0-3cad-4369-8889-b25a0a3e60d3
+    query:  
+    
+GET 200 3ms /users
+    query:  
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+GET 200 86ms /users
+    query:  
+    
+PUT 200 90ms /users/17c0ee5e-5141-41fc-ae7e-67bd4791f33d
+    query:  
+    
+    body: {"id":"17c0ee5e-5141-41fc-ae7e-67bd4791f33d","name":"Updated uno","login":"login uno","password":"password uno"}
+    
+GET 200 4ms /users
+    query:  
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
