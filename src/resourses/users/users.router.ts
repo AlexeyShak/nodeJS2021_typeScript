@@ -4,11 +4,10 @@ import { ERRORS } from "../../constants/errors";
 import { requestDataExtractor } from "../../helpers/request";
 import { sendResponse } from "../../helpers/response";
 import { IUserCreate, IUserUpdate } from "../../interfaces/users";
-import {  getAllUsers, createUser, deleteUser, updateUser } from "./users.service";
+import {  getAllUsers, getUserById, createUser, deleteUser, updateUser } from "./users.service";
 import {postObjValidator, putObjValidator} from "../../validators/userValidator"
 import { IError } from '../../interfaces/errors';
-import { exit } from 'process';
-import { User } from './users.memory.repository';
+
 
 
 const uuidValidator = /(\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b)/;
@@ -25,19 +24,18 @@ export const usersController = async (req: IncomingMessage, res: ServerResponse,
     const reqData = req;
     try {
         if(req.method === REQUEST_METHODS.GET && req.url === '/users' ){
-            console.log(2);
             const users = await getAllUsers();
             return sendResponse(reqData, res, STATUS_CODES.OK, time, users);
         }
-        // if(req.method === REQUEST_METHODS.GET && urlValidator.test(url)){
-        //     const userId: string = url.split('/')[2];
-        //     if(!uuidValidator.test(userId)){
-        //         return sendResponse(reqData, res, STATUS_CODES.BAD_REQUEST, time, ERRORS.WRONG_ID_FORMAT);  
-        //     }
+        if(req.method === REQUEST_METHODS.GET && urlValidator.test(url)){
+            const userId: string = url.split('/')[2];
+            if(!uuidValidator.test(userId)){
+                return sendResponse(reqData, res, STATUS_CODES.BAD_REQUEST, time, ERRORS.WRONG_ID_FORMAT);  
+            }
             
-        //     const user = getUserById(userId);
-        //     return sendResponse(reqData, res, STATUS_CODES.OK, time, user);
-        // }
+            const user = await getUserById(userId);
+            return sendResponse(reqData, res, STATUS_CODES.OK, time, user);
+        }
         if(req.method === REQUEST_METHODS.POST && req.url === '/users'){
            const data = await requestDataExtractor(req);
            let dataObj: IUserCreate;
@@ -71,7 +69,7 @@ export const usersController = async (req: IncomingMessage, res: ServerResponse,
             if(!uuidValidator.test(userId)){
                 return sendResponse(reqData, res, STATUS_CODES.BAD_REQUEST, time, ERRORS.WRONG_ID_FORMAT);
             }
-            const deletionResult =  await deleteUser(userId);
+            const deletionResult = await deleteUser(userId);
             return sendResponse(reqData, res, deletionResult, time);
         }
         return sendResponse(reqData, res, STATUS_CODES.NOT_FOUND, time,  ERRORS.WROND_URL_FORMAT);

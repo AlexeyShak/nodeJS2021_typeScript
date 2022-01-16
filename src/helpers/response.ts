@@ -1,6 +1,6 @@
 
-import { IncomingMessage, ServerResponse, STATUS_CODES } from 'http';
-import { LOG_LEVELS, REQUEST_METHODS } from '../constants/constants';
+import { IncomingMessage, ServerResponse } from 'http';
+import { LOG_LEVELS} from '../constants/constants';
 import { IError } from '../interfaces/errors';
 import { loggerErrors, loggerSuccess } from './logger';
 

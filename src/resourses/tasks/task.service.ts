@@ -4,7 +4,6 @@ import {Task} from './tasks.memory.repository';
 import { getBoardById } from '../boards/board.service';
 import { ITask, ITaskUpdate } from '../../interfaces/tasks';
 
-import {v4 as uuidv4} from 'uuid';
 
 
 import { User } from '../users/users.memory.repository';
@@ -12,6 +11,10 @@ import { Board } from '../boards/board.memory.repository';
 import { ColumnEntity } from '../columns/columns'
 import { getUserById } from '../users/users.service';
 
+const getColumnById = async (id: string) => {
+    const column = await ColumnEntity.findOne({id: id})
+    return column;
+}
 /**
  * Function which returns all tasks with requested boardId to tasks router
  * @param boardId - part of request url instance of string
@@ -19,6 +22,7 @@ import { getUserById } from '../users/users.service';
  */
 export const getAllTasks = async (boardId: string) => {
     const allTasks = await Task.find({boardId: boardId});
+
     return allTasks.map(task => task.toResponse());
 }
 /**
@@ -27,7 +31,7 @@ export const getAllTasks = async (boardId: string) => {
  * @param boardId - part of request url instance of string
  * @return task with requested ID instanse of Itask
  */
-export const getTaskById = async (boardId: string, taskId: string) => { 
+export const getTaskById = async (taskId: string) => { 
     const task = await Task.findOne({id: taskId});
     if(!task) throw { message: ERRORS.TASK_NOT_FOUND, status: STATUS_CODES.NOT_FOUND};
     return task.toResponse();
@@ -39,23 +43,21 @@ export const getTaskById = async (boardId: string, taskId: string) => {
  * @param boardId - part of request url instance of string
  * @return task with ID instanse of ITask
  */
-export const createTask = async (taskData: ITask, boardId: string) =>{
+export const createTask = async (taskData: ITask, boardId:string) =>{
     const task = new Task();
     task.title = taskData.title;
     task.order = taskData.order;
     task.description = taskData.description;
 
-    if(!!taskData.userId){
+    if(taskData.userId){
         task.user = await getUserById(taskData.userId) as User;
     }
-    if(!!taskData.boardId){
+    if(taskData.boardId){
         task.board = await getBoardById(taskData.boardId) as Board;
+    }else{
+        task.boardId = boardId;
     }
-    if(!!taskData.columnId){
-        async function getColumnById(id: string) {
-            const column = await ColumnEntity.findOne({id: id})
-            return column;
-        }
+    if(taskData.columnId){
 
         task.column = await getColumnById(taskData.columnId) as ColumnEntity
     }
@@ -68,25 +70,20 @@ export const createTask = async (taskData: ITask, boardId: string) =>{
  * @param boardId - part of request url instance of string
  * @return task with ID instanse of Itask
  */
-export const updateTask = async (newTaskData: ITaskUpdate, boardId: string, taskId: string) => {
+export const updateTask = async (newTaskData: ITaskUpdate, taskId: string) => {
     const task = await Task.findOne({id: taskId});
     if(!task) throw { message: ERRORS.TASK_NOT_FOUND, status: STATUS_CODES.NOT_FOUND};
     task.title = newTaskData.title || task.title;
     task.order = newTaskData.order || task.order;
     task.description = newTaskData.description || task.description;
 
-    if(!!newTaskData.userId){
+    if(newTaskData.userId){
         task.user = await getUserById(newTaskData.userId) as User;
     }
-    if(!!newTaskData.boardId){
+    if(newTaskData.boardId){
         task.board = await getBoardById(newTaskData.boardId) as Board;
     }
-    if(!!newTaskData.columnId){
-        async function getColumnById(id: string) {
-            const column = await ColumnEntity.findOne({id: id})
-            return column;
-        }
-
+    if(newTaskData.columnId){
         task.column = await getColumnById(newTaskData.columnId) as ColumnEntity
     }
     await task.save();

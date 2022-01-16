@@ -45,7 +45,8 @@ export const boardsController = async (req: IncomingMessage, res: ServerResponse
             return sendResponse(req, res, STATUS_CODES.SERVER_ERROR, time, ERRORS.JSON_PARSE_ERR);
            }
                postBoardObjValidator(boardObj);
-               const board = createBoard(boardObj)
+               const board = await createBoard(boardObj);
+               console.log('new board',board)
                return sendResponse(req, res, STATUS_CODES.CREATED, time, board)
         }
         if(req.method ===REQUEST_METHODS.PUT && urlValidator.test(url)){
@@ -61,7 +62,8 @@ export const boardsController = async (req: IncomingMessage, res: ServerResponse
             return sendResponse(req, res, STATUS_CODES.SERVER_ERROR, time, ERRORS.JSON_PARSE_ERR);
             }
                putBoardObjValidator(boardObj);
-               const board = updateBoard(boardObj, boardId);
+               const board = await updateBoard(boardObj, boardId);
+               console.log('returned board: ', board)
                return sendResponse(req, res, STATUS_CODES.OK, time, board);
         }
         if(req.method === REQUEST_METHODS.DELETE && urlValidator.test(url)){

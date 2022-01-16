@@ -27,7 +27,7 @@ export const tasksController = async (req: IncomingMessage, res: ServerResponse,
             if(!uuidValidator.test(boardId)){
             return sendResponse(req, res, STATUS_CODES.BAD_REQUEST, time, ERRORS.WRONG_ID_FORMAT);
             }
-            const getResult = getAllTasks(boardId);
+            const getResult = await getAllTasks(boardId);
             return sendResponse(req, res, STATUS_CODES.OK, time, getResult);
         }
         
@@ -40,7 +40,7 @@ export const tasksController = async (req: IncomingMessage, res: ServerResponse,
             if(!uuidValidator.test(taskId)){
             return sendResponse(req, res, STATUS_CODES.BAD_REQUEST, time, ERRORS.WRONG_ID_FORMAT);  
             }
-            const task = getTaskById(boardId, taskId);
+            const task = await getTaskById(taskId);
             return sendResponse(req, res, STATUS_CODES.OK, time, task);
         }
 
@@ -57,7 +57,7 @@ export const tasksController = async (req: IncomingMessage, res: ServerResponse,
             return sendResponse(req, res, STATUS_CODES.SERVER_ERROR, time, ERRORS.JSON_PARSE_ERR);
            }
             postTaskObjValidator(taskObj);
-            const task = createTask(taskObj, boardId)
+            const task = await createTask(taskObj, boardId)
             return sendResponse(req, res, STATUS_CODES.CREATED, time, task)
         }
 
@@ -81,7 +81,7 @@ export const tasksController = async (req: IncomingMessage, res: ServerResponse,
             }
             
             putTaskObjValidator(taskObj);
-            const task = updateTask(taskObj, boardId, taskId);
+            const task = await updateTask(taskObj, taskId);
             return sendResponse(req, res, STATUS_CODES.OK, time, task);
         }
 

@@ -5,7 +5,7 @@ import { IBoard, IBoardUpdate } from '../../interfaces/boards';
 
 import {v4 as uuidv4} from 'uuid';
 import { ColumnEntity } from '../columns/columns';
-import { ColumnInterface } from '../../interfaces/column';
+
 
 /**
  * Function which returns all boards to boards router
@@ -13,7 +13,7 @@ import { ColumnInterface } from '../../interfaces/column';
  */
 
 export const getAllBoards = async ():Promise<Board[]> => {
-    const allBoards = await Board.find();
+    const allBoards = await Board.find({relations: ['columns']});
     return allBoards;
 };
 /**
@@ -23,7 +23,7 @@ export const getAllBoards = async ():Promise<Board[]> => {
  */
 
 export const getBoardById = async (boardId: string): Promise<Board> => {
-    const result = await Board.findOne({id: boardId});
+    const result = await Board.findOne({id: boardId}, { relations: ['columns']});
     if(!result) throw { message: ERRORS.BOARD_NOT_FOUND, status: STATUS_CODES.NOT_FOUND}
     return result;
 };
@@ -44,6 +44,11 @@ export const createBoard = async (boardData: IBoard): Promise<Board> => {
         newColEnt.order = order;
         return newColEnt;
     })
+
+    for(let el of modCol) {
+        await el.save();
+    }
+    
     board.columns = modCol;
     
     await board.save();
@@ -55,30 +60,29 @@ export const createBoard = async (boardData: IBoard): Promise<Board> => {
  * @return updated board instanse of IBoard
  */
 export const updateBoard = async (newBoardData: IBoardUpdate, boardId: string): Promise<Board> => {
-    const result = await Board.findOne({id: boardId});
+    const result = await Board.findOne({id: boardId}, { relations: ['columns']});
     if(!result) throw {message: ERRORS.BOARD_NOT_FOUND, status: STATUS_CODES.NOT_FOUND};
     result.title = newBoardData.title || result.title;
-    if(!!newBoardData.columns){
-        const columnsData = newBoardData.columns;
-        const id = columnsData.map(({ id }) => id);
-        const col = await ColumnEntity.findByIds(id);
-
-        const colRefresh = col.map((column) => {
-            const colObj = columnsData.find(({id}) => {
-                id === (column as ColumnEntity).id;
-            })
-            if(!!colObj){
-                column.title = colObj.title || column.title;
-                column.order = colObj.order || column.order;
+    if(!!newBoardData.columns?.length){
+        const modCol = newBoardData.columns.map(({id, title, order}) => { 
+            const newColEnt = new ColumnEntity();
+            if(!id){
+                newColEnt.id = uuidv4()
+            }else{
+                newColEnt.id = id;
             }
-            return column
+            newColEnt.title = title;
+            newColEnt.order = order; 
+            return newColEnt;
         })
-        result.columns = colRefresh;
+        for(let el of modCol) {
+            await el.save();
+        }
+        result.columns = modCol;
     }
-    else {
-        result.columns = result.columns
-    }
+
     await result.save();
+
     return result;
 };
 /**

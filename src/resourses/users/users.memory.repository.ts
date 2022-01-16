@@ -1,10 +1,10 @@
 import 'reflect-metadata'
-import { Entity, Column, PrimaryGeneratedColumn, BaseEntity, OneToMany} from "typeorm";
+import { Entity, Column, PrimaryColumn, BaseEntity, OneToMany} from "typeorm";
 import { Task } from '../tasks/tasks.memory.repository'
 
-@Entity({name: 'huita'})
+@Entity({name: 'users'})
 export class User extends BaseEntity {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryColumn()
   id!: string;
 
   @Column()

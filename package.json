@@ -14,7 +14,8 @@
     "server": "nodemon ./dist/server.js --watch ./dist",
     "lint": "eslint --ext .js,.ts --fix src/",
     "test": "cross-env DEBUG=rs:* jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace --runInBand",
-    "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace"
+    "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js ormconfig.json"
   },
   "keywords": [
     "rs",

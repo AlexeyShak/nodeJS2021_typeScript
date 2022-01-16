@@ -37,7 +37,7 @@ export class Task extends BaseEntity {
   @JoinColumn({ name: 'boardId' })
   board!: Board;
 
-  @Column({ nullable: false })
+  @Column({ nullable: true })
   boardId!: string;
 
   @ManyToOne(() => ColumnEntity, (column) => column.tasks, {

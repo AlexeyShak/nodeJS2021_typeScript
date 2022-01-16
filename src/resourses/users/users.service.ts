@@ -2,7 +2,7 @@ import {v4 as uuidv4} from 'uuid';
 
 import { STATUS_CODES } from "../../constants/constants";
 import { ERRORS } from "../../constants/errors";
-import { IUser, IUserCreate, IUserUpdate } from "../../interfaces/users";
+import { IUserCreate, IUserUpdate } from "../../interfaces/users";
 import { User } from "./users.memory.repository";
 
 
@@ -26,7 +26,7 @@ export const getAllUsers = async () => {
 export const getUserById = async (userId: string) => {
     const user = await User.findOne({id: userId});
     if(!user) throw { message: ERRORS.USER_NOT_FOUND, status: STATUS_CODES.NOT_FOUND}
-    return user.toResponse()
+    return user.toResponse();
 }
 
 /**
@@ -40,9 +40,7 @@ export const createUser = async (newUser: IUserCreate) =>{
     user.name = newUser.name;
     user.login = newUser.login;
     user.password = newUser.password;
-    console.log('user:', user)
     await user.save();
-    console.log (5);
     return user.toResponse();
 }
 
