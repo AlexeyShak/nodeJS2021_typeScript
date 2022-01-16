@@ -4,17 +4,19 @@
 
 - Git - [Download & Install Git](https://git-scm.com/downloads).
 - Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager.
+- Docker - [Download & Install Docker](https://docs.docker.com/engine/install/)
+- Docker HUB - [Create Docker Hub account](https://hub.docker.com/)
 
 ## Downloading
 
 ```
-git clone {repository URL}
+git clone https://github.com/AlexeyShak/nodeJS2021_typeScript.git
 ```
 
-## Checkout to loggin branch
+## Checkout to task7-docker-basics branch
 
 ```
-git checkout logging
+git checkout task7-docker-basics 
 ```
 ## Installing NPM modules
 
@@ -22,10 +24,11 @@ git checkout logging
 npm install
 ```
 
-## Running application
+##  Build docker images of an app & database
 
 ```
-npm run start
+
+docker-compose up --build
 
 ```
 

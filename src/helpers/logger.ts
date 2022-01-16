@@ -1,5 +1,4 @@
 import fs from 'fs'; 
-import colors from 'colors/safe';
 import { IncomingMessage } from 'http';
 import { LOG_LEVELS, REQUEST_METHODS } from '../constants/constants';
 import { IError } from '../interfaces/errors';
@@ -12,12 +11,12 @@ export const logLogger = (logLevel: LOG_LEVELS, data: object | string): void => 
     }
     else if (process.env.LOG_IN_FILE !== 'false') {
         if(logLevel === 4){
-            const fsLog = fs.createWriteStream('errorlogs.txt', {flags: 'a'});
+            const fsLog = fs.createWriteStream('logs/errorlogs.txt', {flags: 'a'});
             fsLog.write(data + '\n');
         }
-        const fsLog = fs.createWriteStream('logs.txt', {flags: 'a'});
+        const fsLog = fs.createWriteStream('logs/logs.txt', {flags: 'a'});
         fsLog.write(data + '\n');
-        console.log(data);
+        console.log( data);
     }
     else console.log(data);
 }
@@ -32,7 +31,7 @@ export const loggerSuccess =  (logLevel: LOG_LEVELS, req: IncomingMessage, statu
         }
         else query.push(url.split('?')[1]);
     }
-    let logSuccessStr = `${req.method} ${colors.green(`${status}`)} ${processTime}ms ${url}
+    let logSuccessStr = `${req.method} ${status} ${processTime}ms ${url}
     query: ${query} 
     `;
     if(req.method === REQUEST_METHODS.POST || req.method === REQUEST_METHODS.PUT){
@@ -50,7 +49,7 @@ export const loggerErrors =  (logLevel: LOG_LEVELS, req: IncomingMessage, status
     const errorObj = data as IError;
     let error = '';
     typeof data === 'string'? error = data : error = errorObj.message;
-    const logErrorStr = `${req.method} ${colors.red(`${status}`)} ${processTime}ms ${url},
+    const logErrorStr = `${req.method} ${status} ${processTime}ms ${url},
     error message: ${error}
     `
     logLogger(logLevel, logErrorStr);
@@ -59,7 +58,7 @@ export const loggerErrors =  (logLevel: LOG_LEVELS, req: IncomingMessage, status
 export const loggerUncaught = (err: Error, origin: NodeJS.UncaughtExceptionOrigin): void => {
     console.log(`
 ${origin}
-Error message: ${colors.red(`${err}`)}
+Error message: ${err}
 `)
 }
 export const loggerUnhandled = (reason: unknown, promise: Promise<unknown>) => {
