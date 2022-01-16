@@ -2,30 +2,31 @@ import {v4 as uuidv4} from 'uuid';
 
 import { STATUS_CODES } from "../../constants/constants";
 import { ERRORS } from "../../constants/errors";
-import { IUser, IUserUpdate } from "../../interfaces/users";
-import { users, usersModify } from "./users.memory.repository";
-import { unassignUserAfterDelete } from "../tasks/task.service";
+import { IUserCreate, IUserUpdate } from "../../interfaces/users";
+import { User } from "./users.memory.repository";
+
 
 /**
  * Function which returns all users without property "password" to users router
  * @return all users instanse of IUser[] to users router
  */
 
-export const getAllUsers = (): IUser[] => users.map(el => {
-     delete el.password;
-     return el;
- })
+export const getAllUsers = async () => {
 
-/**
- * Function which returns user with requested ID to users router
- * @param userId - part of request url instance of string
- * @return user with requested ID instanse of IUser
- */
-export const getUserById = (userId: string): IUser => {
-    const result = users.find(el => el.id === userId);
-    if(!result) throw {message: ERRORS.USER_NOT_FOUND, status: STATUS_CODES.NOT_FOUND};
-    delete result.password;
-    return result;
+    const users = await User.find();
+    return users.map(user => user.toResponse())
+    
+}
+
+// /**
+//  * Function which returns user with requested ID to users router
+//  * @param userId - part of request url instance of string
+//  * @return user with requested ID instanse of IUser
+//  */
+export const getUserById = async (userId: string) => {
+    const user = await User.findOne({id: userId});
+    if(!user) throw { message: ERRORS.USER_NOT_FOUND, status: STATUS_CODES.NOT_FOUND}
+    return user.toResponse();
 }
 
 /**
@@ -33,11 +34,14 @@ export const getUserById = (userId: string): IUser => {
  * @param boardData - requested user data instance of IUser
  * @return user with ID instanse of IUser
  */
-export const createUser = (newUser: IUser): IUser =>{
-    newUser.id = uuidv4();
-    users.push(newUser);
-    delete newUser.password;
-    return newUser;
+export const createUser = async (newUser: IUserCreate) =>{
+    const user = new User();
+    user.id =  uuidv4();
+    user.name = newUser.name;
+    user.login = newUser.login;
+    user.password = newUser.password;
+    await user.save();
+    return user.toResponse();
 }
 
 /**
@@ -45,26 +49,28 @@ export const createUser = (newUser: IUser): IUser =>{
  * @param newBoardData - requested user data instance of IUserUpdate
  * @return updated user instanse of IUser
  */
-export const updateUser = (updatedUser: IUserUpdate, userId: string): IUser =>{
-    const result: number = users.findIndex(el => el.id === userId);
-    if(result === -1) throw {message: ERRORS.USER_NOT_FOUND, status: STATUS_CODES.NOT_FOUND};
-    users[result].name = updatedUser.name || users[result].name;
-    users[result].login = updatedUser.login || users[result].login;
-    users[result].password = updatedUser.password || users[result].password;
-    return users[result];
+export const updateUser = async (updatedUser: IUserUpdate, userId: string) => {
+    const result = await User.findOne({id: userId});
+    if(!result) throw {message: ERRORS.USER_NOT_FOUND, status: STATUS_CODES.NOT_FOUND};
+    result.name = updatedUser.name || result.name;
+    result.login = updatedUser.login || result.login;
+    result.password = updatedUser.password || result.password;
+    await result.save();
+
+    return result.toResponse();
 }
 /**
  * Function which deletes user with requested ID
  * @param newBoardData - requested userId instance of string
  * @return status code 'no content' instanse of number to user service
  */
-export const deleteUser = (userId: string): number => {
-    const result = users.filter(el => el.id !== userId);
-    if(result.length === users.length) {
+
+export const deleteUser = async (userId: string): Promise<number> => {
+    const user = await User.findOne({id: userId});
+    if(!user) {
         throw {message: ERRORS.USER_NOT_FOUND, status: STATUS_CODES.NOT_FOUND};
     }
    
-    usersModify(result);
-    unassignUserAfterDelete(userId);
+    await User.remove(user);
     return STATUS_CODES.NO_CONTENT; 
 }

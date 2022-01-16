@@ -2,7 +2,7 @@
 export interface IUserCreate {
     name: string,
     login: string,
-    password?: string
+    password: string
 }
 
 export interface IUser extends IUserCreate {

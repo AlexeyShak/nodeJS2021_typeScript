@@ -1,27 +1,30 @@
-
 import 'reflect-metadata';
 import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
   BaseEntity,
+  ManyToOne,
   OneToMany,
 } from 'typeorm';
 
-import { ColumnEntity } from '../columns/columns';
+import { Board } from '../boards/board.memory.repository';
 import { Task } from '../tasks/tasks.memory.repository';
 
 @Entity()
-export class Board extends BaseEntity {
+export class ColumnEntity extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id!: string;
 
   @Column()
   title!: string;
 
-  @OneToMany(() => ColumnEntity, (column) => column.board)
-  columns!: ColumnEntity[];
+  @Column()
+  order!: number;
 
-  @OneToMany(() => Task, (task) => task.board)
+  @ManyToOne(() => Board, (board) => board.columns, { onDelete: 'CASCADE' })
+  board!: Board;
+
+  @OneToMany(() => Task, (task) => task.column)
   tasks!: Task[];
 }

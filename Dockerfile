@@ -1,5 +1,7 @@
 FROM node:16-alpine
 
+EXPOSE 4000
+
 WORKDIR /src
 
 ADD package.json /src
