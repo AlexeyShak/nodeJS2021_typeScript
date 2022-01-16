@@ -7,7 +7,6 @@ import { IUserCreate, IUserUpdate } from "../../interfaces/users";
 import {  getAllUsers, createUser, deleteUser, updateUser } from "./users.service";
 import {postObjValidator, putObjValidator} from "../../validators/userValidator"
 import { IError } from '../../interfaces/errors';
-import { setBoards } from '../boards/board.memory.repository';
 import { exit } from 'process';
 import { User } from './users.memory.repository';
 
@@ -26,6 +25,7 @@ export const usersController = async (req: IncomingMessage, res: ServerResponse,
     const reqData = req;
     try {
         if(req.method === REQUEST_METHODS.GET && req.url === '/users' ){
+            console.log(2);
             const users = await getAllUsers();
             return sendResponse(reqData, res, STATUS_CODES.OK, time, users);
         }

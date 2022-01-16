@@ -192,3 +192,79 @@ GET 404 0ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks/d5afe177-24bb-467
 GET 404 0ms /boards/e8e43575-55cf-4f85-a783-179bb2b1d5e2/tasks/51102f18-f23c-4b23-bdca-3c16f73bb3ef,
     error message: Board with requested ID not found. Please check ID input
     
+POST 500 86ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 60ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 54ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 16ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 10ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 11ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 11ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 86ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 23ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 18ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 19ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 6ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 19ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 7ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 11ms /users,
+    error message: relation "user" does not exist
+    
+GET 500 88ms /users,
+    error message: relation "user" does not exist
+    
+GET 500 140ms /users,
+    error message: relation "user" does not exist
+    
+GET 500 126ms /users,
+    error message: relation "user" does not exist
+    
+GET 500 100ms /users,
+    error message: relation "huita" does not exist
+    
+GET 500 121ms /users,
+    error message: relation "huita" does not exist
+    
+POST 500 67ms /users,
+    error message: relation "huita" does not exist
+    
+POST 500 63ms /users,
+    error message: relation "huita" does not exist
+    
+POST 500 17ms /users,
+    error message: relation "huita" does not exist
+    
+PUT 500 82ms /users/17c0ee5e-5141-41fc-ae7e-67bd4791f33d,
+    error message: relation "huita" does not exist
+    
+error in catch QueryFailedError: relation "board" does not exist
+GET 500 76ms /boards,
+    error message: relation "board" does not exist
+    

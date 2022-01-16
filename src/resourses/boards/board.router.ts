@@ -25,14 +25,15 @@ export const boardsController = async (req: IncomingMessage, res: ServerResponse
     
     try {
         if(req.method === REQUEST_METHODS.GET && req.url === '/boards' ){
-            return sendResponse(req, res, STATUS_CODES.OK, time, getAllBoards());
+            const allBoards = await getAllBoards();
+            return sendResponse(req, res, STATUS_CODES.OK, time, allBoards);
         }
         if(req.method === REQUEST_METHODS.GET && urlValidator.test(url)){
             const boardId:string = url.split('/')[2];
             if(!uuidValidator.test(boardId)){
                 return sendResponse(req, res, STATUS_CODES.BAD_REQUEST, time, ERRORS.WRONG_ID_FORMAT);  
             }
-            const board = getBoardById(boardId);
+            const board = await getBoardById(boardId);
             return sendResponse(req, res, STATUS_CODES.OK,time, board);
         }
         if(req.method === REQUEST_METHODS.POST && req.url === '/boards'){
@@ -68,7 +69,7 @@ export const boardsController = async (req: IncomingMessage, res: ServerResponse
             if(!uuidValidator.test(boardId)){
                 return sendResponse(req, res, STATUS_CODES.BAD_REQUEST, time, ERRORS.WRONG_ID_FORMAT);
             }
-            const deletionResult = deleteBoard(boardId);
+            const deletionResult = await deleteBoard(boardId);
             return sendResponse(req, res, deletionResult, time);
         }
     } catch (e) {

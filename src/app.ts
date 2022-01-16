@@ -43,6 +43,7 @@ export const app = createServer((request: IncomingMessage, response: ServerRespo
         const url = request.url as string;
         const time = new Date().getTime();
         if(url.startsWith('/users')){
+            console.log(1);
             return usersController(request, response, time);
         }
         if(url.startsWith('/boards')){

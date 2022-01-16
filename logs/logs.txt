@@ -2403,3 +2403,1016 @@ port: 4000
 port: 4000
 port: 4000
 port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+POST 500 86ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 60ms /users,
+    error message: relation "users" does not exist
+    
+GET 200 1ms /boards
+    query:  
+    
+GET 200 1ms /boards/c8f746c3-7089-4abc-af07-d66c5548b8f0/tasks
+    query:  
+    
+GET 500 54ms /users,
+    error message: relation "users" does not exist
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+GET 500 16ms /users,
+    error message: relation "users" does not exist
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+GET 500 10ms /users,
+    error message: relation "users" does not exist
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+GET 500 11ms /users,
+    error message: relation "users" does not exist
+    
+port: 4000
+port: 4000
+port: 4000
+GET 500 11ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 86ms /users,
+    error message: relation "users" does not exist
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+POST 500 23ms /users,
+    error message: relation "users" does not exist
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+POST 500 18ms /users,
+    error message: relation "users" does not exist
+    
+port: 4000
+POST 500 19ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 6ms /users,
+    error message: relation "users" does not exist
+    
+port: 4000
+port: 4000
+POST 500 19ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 7ms /users,
+    error message: relation "users" does not exist
+    
+port: 4000
+GET 500 11ms /users,
+    error message: relation "user" does not exist
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+GET 500 88ms /users,
+    error message: relation "user" does not exist
+    
+port: 4000
+port: 4000
+GET 500 140ms /users,
+    error message: relation "user" does not exist
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+GET 500 126ms /users,
+    error message: relation "user" does not exist
+    
+port: 4000
+port: 4000
+port: 4000
+GET 500 100ms /users,
+    error message: relation "huita" does not exist
+    
+GET 500 121ms /users,
+    error message: relation "huita" does not exist
+    
+POST 500 67ms /users,
+    error message: relation "huita" does not exist
+    
+POST 500 63ms /users,
+    error message: relation "huita" does not exist
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+POST 500 17ms /users,
+    error message: relation "huita" does not exist
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+PUT 500 82ms /users/17c0ee5e-5141-41fc-ae7e-67bd4791f33d,
+    error message: relation "huita" does not exist
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+GET 200 126ms /users
+    query:  
+    
+port: 4000
+POST 201 107ms /users
+    query:  
+    
+    body: {"id":"39784be1-19a1-4ec6-8da1-bd2c4a51c18d","name":"Uno2","login":"login uno","password":"password uno"}
+    
+GET 200 106ms /users
+    query:  
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+GET 200 12ms /users
+    query:  
+    
+GET 500 76ms /boards,
+    error message: relation "board" does not exist
+    
+error in catch QueryFailedError: relation "board" does not exist
+port: 4000
+port: 4000
+port: 4000
+GET 200 8ms /boards
+    query:  
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+POST 201 3ms /boards
+    query:  
+    
+    body: {}
+    
+POST 201 1ms /boards
+    query:  
+    
+    body: {}
+    
+GET 200 52ms /boards
+    query:  
+    

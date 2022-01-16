@@ -94,7 +94,7 @@ export const tasksController = async (req: IncomingMessage, res: ServerResponse,
             if(!uuidValidator.test(taskId)){
             return sendResponse(req, res, STATUS_CODES.BAD_REQUEST, time, ERRORS.WRONG_ID_FORMAT);  
             }
-            const deletionResult = deleteTask(boardId, taskId);
+            const deletionResult = await deleteTask(boardId, taskId);
             if(typeof deletionResult === 'string'){
                 return sendResponse(req, res, STATUS_CODES.NOT_FOUND, time, deletionResult);
             }
