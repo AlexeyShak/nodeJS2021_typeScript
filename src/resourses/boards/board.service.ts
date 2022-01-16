@@ -45,7 +45,7 @@ export const createBoard = async (boardData: IBoard): Promise<Board> => {
         return newColEnt;
     })
 
-    for(let el of modCol) {
+    for(const el of modCol) {
         await el.save();
     }
     
@@ -63,7 +63,7 @@ export const updateBoard = async (newBoardData: IBoardUpdate, boardId: string): 
     const result = await Board.findOne({id: boardId}, { relations: ['columns']});
     if(!result) throw {message: ERRORS.BOARD_NOT_FOUND, status: STATUS_CODES.NOT_FOUND};
     result.title = newBoardData.title || result.title;
-    if(!!newBoardData.columns?.length){
+    if(newBoardData.columns?.length){
         const modCol = newBoardData.columns.map(({id, title, order}) => { 
             const newColEnt = new ColumnEntity();
             if(!id){
@@ -75,7 +75,7 @@ export const updateBoard = async (newBoardData: IBoardUpdate, boardId: string): 
             newColEnt.order = order; 
             return newColEnt;
         })
-        for(let el of modCol) {
+        for(const el of modCol) {
             await el.save();
         }
         result.columns = modCol;

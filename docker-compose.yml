@@ -3,7 +3,7 @@ services:
   app:
       build: .
       ports:
-       - "4000:4000"
+       - "${PORT}:${PORT}"
       command: npm run start
       volumes:
         - .:/src
@@ -15,7 +15,7 @@ services:
   database:
     build: db
     ports:
-     - "5432:5432"
+     - "${PG_PORT}:${PG_PORT}"
     environment:
       POSTGRES_PASSWORD: "${PG_PASSWORD}"
       PGDATA: /var/lib/postgresql/data/pgdata

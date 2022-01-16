@@ -15,7 +15,10 @@
     "lint": "eslint --ext .js,.ts --fix src/",
     "test": "cross-env DEBUG=rs:* jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace --runInBand",
     "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace",
-    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js ormconfig.json"
+    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
+    "typeorm:migration:run": "ts-node --transpile-only ./node_modules/typeorm/cli.js migration:run",
+    "typeorm:migration:revert": "ts-node --transpile-only ./node_modules/typeorm/cli.js migration:revert",
+    "typeorm:schema:drop": "ts-node --transpile-only ./node_modules/typeorm/cli.js schema:drop"
   },
   "keywords": [
     "rs",

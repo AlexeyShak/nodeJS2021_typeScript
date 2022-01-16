@@ -8,21 +8,26 @@ import { Task } from './resourses/tasks/tasks.memory.repository';
 import { Board } from './resourses/boards/board.memory.repository';
 import { ColumnEntity } from './resourses/columns/columns';
 
+const PG_USER = process.env.PG_USER;
+const PG_PASSWORD = process.env.PG_PASSWORD;
+const PG_PORT = parseInt(process.env.PG_PORT as string);
+const PG_DATABASE = process.env.PG_BASE;
+
 app.listen(CONFIG.PORT, async () => {
   console.log(`App is running on http://localhost1:${CONFIG.PORT}`);
   const connection = await createConnection({
     type: 'postgres',
     host: 'nodejs2021_typescript_database_1',
-    port: 5432,
+    port: PG_PORT,
     username: 'postgres',
-    password: '111',
-    database: 'rsschool',
-    migrations: ["migration/*.ts"],
-    cli: {
-        "migrationsDir": "migration"
-    },
+    password: PG_PASSWORD,
+    database: PG_DATABASE,
+  //   migrations: ["migration/*.ts"],
+  //   cli: {
+  //       "migrationsDir": "migration"
+  //   },
     entities: [User, Task, Board, ColumnEntity]
   });
-  //await connection.synchronize();
+  await connection.synchronize();
   console.log('database successfully connected')
 });

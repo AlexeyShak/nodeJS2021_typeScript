@@ -916,3 +916,703 @@ GET 400 0ms /boards/undefined/tasks/undefined,
 DELETE 400 0ms /boards/undefined,
     error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
     
+error in catch [object Object]
+GET 404 7ms /boards/ea966ee1-42a7-40ee-9556-15a0e1ef63fb,
+    error message: Board with requested ID not found. Please check ID input
+    
+GET 404 5ms /boards/69ee2213-62e0-434b-a184-c094172c3779/tasks/011e6821-35b6-4530-a024-d2fb1eb0f638,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 11ms /boards/69ee2213-62e0-434b-a184-c094172c3779/tasks/a0233332-cf9b-4079-9ff8-85aa7256f665,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 16ms /boards/69ee2213-62e0-434b-a184-c094172c3779/tasks/b7c7620e-5a3b-4829-b8d3-1efebb6c1c30,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 15ms /boards/69ee2213-62e0-434b-a184-c094172c3779/tasks/bb92fde4-f2b6-4cf1-ba25-d21ad9cb5ec4,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 20ms /boards/69ee2213-62e0-434b-a184-c094172c3779/tasks/d60dc514-c293-44b4-9562-dea4e886b25c,
+    error message: Task with requested ID not found. Please check ID input
+    
+POST 500 23ms /boards/93bbc5a2-78f2-43e8-b711-a8f716e680cd/tasks,
+    error message: insert or update on table "task" violates foreign key constraint "FK_f316d3fe53497d4d8a2957db8b9"
+    
+POST 500 23ms /boards/93bbc5a2-78f2-43e8-b711-a8f716e680cd/tasks,
+    error message: insert or update on table "task" violates foreign key constraint "FK_f316d3fe53497d4d8a2957db8b9"
+    
+GET 404 5ms /boards/fa1905a4-4698-4c82-8db7-56bac3353438/tasks/58309144-27cb-40ea-ad56-5756069721fc,
+    error message: Task with requested ID not found. Please check ID input
+    
+POST 500 94ms /boards/d9235902-2ec9-42ef-8eeb-da5be5591016/tasks,
+    error message: insert or update on table "task" violates foreign key constraint "FK_f316d3fe53497d4d8a2957db8b9"
+    
+POST 500 105ms /boards/d9235902-2ec9-42ef-8eeb-da5be5591016/tasks,
+    error message: insert or update on table "task" violates foreign key constraint "FK_f316d3fe53497d4d8a2957db8b9"
+    
+error in catch [object Object]
+GET 404 5ms /boards/94fda895-60c0-4c39-838c-7835f336c8a1,
+    error message: Board with requested ID not found. Please check ID input
+    
+GET 404 5ms /boards/8cd69889-2e4b-43d9-8a92-8f9888a276e0/tasks/1e234161-b88f-45af-8d2d-8ea6fb9dbdec,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 11ms /boards/8cd69889-2e4b-43d9-8a92-8f9888a276e0/tasks/e53f9f6d-5666-4b80-a57d-830025e9f49e,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 14ms /boards/8cd69889-2e4b-43d9-8a92-8f9888a276e0/tasks/4dc289a9-01b1-41ff-8942-62410cf30308,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 18ms /boards/8cd69889-2e4b-43d9-8a92-8f9888a276e0/tasks/706bfcd1-ade0-44a1-91c1-dc484444f0c8,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 21ms /boards/8cd69889-2e4b-43d9-8a92-8f9888a276e0/tasks/68015af1-1b77-472b-9c02-a5b26964644c,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 4ms /boards/738c00bd-feb5-4d12-9c2a-9a2a7f9a548f/tasks/fcd56835-9f14-4f27-9769-afbce973ad5a,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 45ms /boards/d07e4b4c-d97e-4298-a1aa-6aa6de4ff4df,
+    error message: Board with requested ID not found. Please check ID input
+    
+error in catch [object Object]
+POST 500 47ms /boards/d9235902-2ec9-42ef-8eeb-da5be5591016/tasks,
+    error message: insert or update on table "task" violates foreign key constraint "FK_f316d3fe53497d4d8a2957db8b9"
+    
+POST 500 184ms /boards/d9235902-2ec9-42ef-8eeb-da5be5591016/tasks,
+    error message: insert or update on table "task" violates foreign key constraint "FK_f316d3fe53497d4d8a2957db8b9"
+    
+PUT 404 69ms /users/17c0ee5e-5141-41fc-ae7e-67bd4791f33d,
+    error message: User with requested ID not found. Please check ID input
+    
+POST 404 3ms /boards/d9235902-2ec9-42ef-8eeb-da5be5591016/tasks,
+    error message: User with requested ID not found. Please check ID input
+    
+POST 500 78ms /boards/d9235902-2ec9-42ef-8eeb-da5be5591016/tasks,
+    error message: insert or update on table "task" violates foreign key constraint "FK_f316d3fe53497d4d8a2957db8b9"
+    
+GET 500 120ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 25ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 8ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 4ms /users,
+    error message: relation "users" does not exist
+    
+PUT 400 1ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 6ms /users,
+    error message: relation "users" does not exist
+    
+DELETE 400 1ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 7ms /users,
+    error message: relation "users" does not exist
+    
+error in catch [object Object]
+GET 404 6ms /boards/630a1524-2455-4940-b52b-d5a53f1283ee,
+    error message: Board with requested ID not found. Please check ID input
+    
+GET 404 6ms /boards/eed390b7-7418-4054-9a02-47dcc83dc534/tasks/1177ce0b-a950-4586-b779-da8922b49125,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 11ms /boards/eed390b7-7418-4054-9a02-47dcc83dc534/tasks/dae78501-bc84-4c53-94d8-4e8e7c73da9c,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 22ms /boards/eed390b7-7418-4054-9a02-47dcc83dc534/tasks/e5a89d06-d779-41ce-b18a-f1b448253db9,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 19ms /boards/eed390b7-7418-4054-9a02-47dcc83dc534/tasks/fac4cdb1-a22c-413b-b193-a488d335b9d9,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 28ms /boards/eed390b7-7418-4054-9a02-47dcc83dc534/tasks/c678fad3-c2e4-4614-9daf-ebd521a8a78a,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 8ms /boards/9ed1763f-012f-4d11-8f69-f3a3292b3986/tasks/920308c5-79c0-43ee-a674-7e997c745fbf,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 500 2ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 3ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 4ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 4ms /users,
+    error message: relation "users" does not exist
+    
+PUT 400 0ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 4ms /users,
+    error message: relation "users" does not exist
+    
+DELETE 400 0ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 4ms /users,
+    error message: relation "users" does not exist
+    
+error in catch [object Object]
+GET 404 6ms /boards/b3554e42-476e-407c-b088-66a4d050fea4,
+    error message: Board with requested ID not found. Please check ID input
+    
+GET 404 18ms /boards/f1ef4400-3ab5-4060-97af-e435938182e7/tasks/6c271f91-d1df-449e-9629-3f6a7549cd50,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 25ms /boards/f1ef4400-3ab5-4060-97af-e435938182e7/tasks/1d055873-a4ee-456e-9b4a-89c3f951502f,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 28ms /boards/f1ef4400-3ab5-4060-97af-e435938182e7/tasks/af6865a3-26b8-4b67-ac97-3715d67afa8e,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 27ms /boards/f1ef4400-3ab5-4060-97af-e435938182e7/tasks/a226b22f-0c7e-4d87-b7c0-87f87d141be9,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 32ms /boards/f1ef4400-3ab5-4060-97af-e435938182e7/tasks/4c51aa59-b724-42d0-872e-029315bb1809,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 4ms /boards/108af7d1-9272-442a-ae1e-7ac6249833e8/tasks/e8da52ee-4bb8-47b2-82c6-278804e9a249,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 500 125ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 24ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 7ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 5ms /users,
+    error message: relation "users" does not exist
+    
+PUT 400 2ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 5ms /users,
+    error message: relation "users" does not exist
+    
+DELETE 400 1ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 4ms /users,
+    error message: relation "users" does not exist
+    
+GET 404 7ms /boards/94f6d2c9-9ac5-429b-990f-de2ab64dbd66,
+    error message: Board with requested ID not found. Please check ID input
+    
+error in catch [object Object]
+GET 404 11ms /boards/347c8e2d-438c-45e1-bd5a-74f6348050ea/tasks/75570194-5649-4ece-9881-e1e2563cc906,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 14ms /boards/347c8e2d-438c-45e1-bd5a-74f6348050ea/tasks/eaca4c92-72e2-42a0-b7a9-3f9ea40624ea,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 17ms /boards/347c8e2d-438c-45e1-bd5a-74f6348050ea/tasks/ebddf0e9-74df-42e2-a5cf-712eb0045246,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 20ms /boards/347c8e2d-438c-45e1-bd5a-74f6348050ea/tasks/a63bce50-caa9-44ab-a017-7e50c0cc0edf,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 23ms /boards/347c8e2d-438c-45e1-bd5a-74f6348050ea/tasks/71f052e7-50d0-4255-b2b7-ba200c43fa47,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 5ms /boards/c72a7f72-747b-4b09-a3cb-a0bed7d54fc7/tasks/b446f37a-b4c6-44e2-a0a2-91b3afcb82dd,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 500 19ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 23ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 8ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 7ms /users,
+    error message: relation "users" does not exist
+    
+PUT 400 1ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 7ms /users,
+    error message: relation "users" does not exist
+    
+DELETE 400 0ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 4ms /users,
+    error message: relation "users" does not exist
+    
+error in catch [object Object]
+GET 404 4ms /boards/e67067ca-9b05-49d5-9add-f3853906be79,
+    error message: Board with requested ID not found. Please check ID input
+    
+GET 404 10ms /boards/c1b8c846-7099-40ff-8de8-9149749897e2/tasks/c3fccd18-162b-4cb9-8772-0e8414ae61d2,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 11ms /boards/c1b8c846-7099-40ff-8de8-9149749897e2/tasks/5a085bf5-220f-4839-9d54-326f6c659576,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 14ms /boards/c1b8c846-7099-40ff-8de8-9149749897e2/tasks/0bd5081a-860c-4bd8-8cea-f760ccd8151b,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 18ms /boards/c1b8c846-7099-40ff-8de8-9149749897e2/tasks/7329f746-58cc-4d45-8da4-0c2961bc834c,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 12ms /boards/c1b8c846-7099-40ff-8de8-9149749897e2/tasks/3befff7b-0ddb-41e5-a152-830ce4d3f416,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 7ms /boards/104cff0f-769f-4e03-807f-c60d7c9c89ee/tasks/a3c22a7f-5f05-422b-8cd2-66afc2f9da7c,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 500 116ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 23ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 8ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 3ms /users,
+    error message: relation "users" does not exist
+    
+PUT 400 1ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 3ms /users,
+    error message: relation "users" does not exist
+    
+DELETE 400 1ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 3ms /users,
+    error message: relation "users" does not exist
+    
+error in catch [object Object]
+GET 404 6ms /boards/0b89d639-781c-40dd-9af2-649bef8bd2c9,
+    error message: Board with requested ID not found. Please check ID input
+    
+GET 404 8ms /boards/1752f906-bf85-4030-97a1-cefd0c95fc3f/tasks/79f3d328-8e44-45f5-983e-dba8797cd9bb,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 13ms /boards/1752f906-bf85-4030-97a1-cefd0c95fc3f/tasks/41d53e09-bf6b-4e06-ad97-870a20df3c50,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 14ms /boards/1752f906-bf85-4030-97a1-cefd0c95fc3f/tasks/f5292a12-a8f4-45e2-8db7-0018a78b409a,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 8ms /boards/1752f906-bf85-4030-97a1-cefd0c95fc3f/tasks/c840e530-e587-467f-8526-c9e38e2de6a1,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 11ms /boards/1752f906-bf85-4030-97a1-cefd0c95fc3f/tasks/867c7104-651f-436c-ae40-28dcfbac09f9,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 4ms /boards/8340ad9a-46d3-4bb4-8f61-2499bd8d4f63/tasks/940fdb77-95a7-4234-b75b-f374abfd8c6b,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 500 129ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 26ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 9ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 8ms /users,
+    error message: relation "users" does not exist
+    
+PUT 400 1ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 5ms /users,
+    error message: relation "users" does not exist
+    
+DELETE 400 0ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 5ms /users,
+    error message: relation "users" does not exist
+    
+error in catch [object Object]
+GET 404 5ms /boards/bde6bcbc-0432-4b32-831b-c043fef51794,
+    error message: Board with requested ID not found. Please check ID input
+    
+GET 404 7ms /boards/0cb74ea7-7385-4a93-9aa7-5fb500f71cbe/tasks/eab314b1-aad6-48a0-a489-f622f3fc79ce,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 7ms /boards/0cb74ea7-7385-4a93-9aa7-5fb500f71cbe/tasks/7ee2cfe5-cfab-440b-b986-43d25cdef535,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 9ms /boards/0cb74ea7-7385-4a93-9aa7-5fb500f71cbe/tasks/56d20b6a-ba63-443d-b56b-eea799063f7f,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 11ms /boards/0cb74ea7-7385-4a93-9aa7-5fb500f71cbe/tasks/f6f3c692-c58f-4046-bbd0-9a246662ae90,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 7ms /boards/0cb74ea7-7385-4a93-9aa7-5fb500f71cbe/tasks/5ed7b28a-b7d2-40d9-be91-65c71e61d628,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 5ms /boards/d5e9623a-4ac9-457e-8c73-6d12c8f6493b/tasks/61660ef9-9c25-4067-a1a6-105b5cc39c95,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 500 21ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 22ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 7ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 4ms /users,
+    error message: relation "users" does not exist
+    
+PUT 400 1ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 5ms /users,
+    error message: relation "users" does not exist
+    
+DELETE 400 1ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 6ms /users,
+    error message: relation "users" does not exist
+    
+GET 404 5ms /boards/02f6a268-6731-4f4d-9fb8-37ed986de61c,
+    error message: Board with requested ID not found. Please check ID input
+    
+error in catch [object Object]
+GET 404 8ms /boards/5c6345da-c781-4669-a64d-c23eb5475c3e/tasks/d990cb1c-1447-481b-b4e8-1216de42c561,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 12ms /boards/5c6345da-c781-4669-a64d-c23eb5475c3e/tasks/973581a9-fec9-4fdc-8fef-9c06b560f81a,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 12ms /boards/5c6345da-c781-4669-a64d-c23eb5475c3e/tasks/56bb7dd7-136c-4231-b710-6198bbeb284c,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 17ms /boards/5c6345da-c781-4669-a64d-c23eb5475c3e/tasks/4594e91f-32ce-457e-ab4c-2764a302f297,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 11ms /boards/5c6345da-c781-4669-a64d-c23eb5475c3e/tasks/83c4e30e-5c41-4bd8-ad61-bba2ee638e8f,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 3ms /boards/e2bcac1d-e2e9-4cf7-9c31-3d3af6be062a/tasks/3d73a0fb-5118-4d83-a534-d6c60260cf06,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 500 46ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 3ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 6ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 4ms /users,
+    error message: relation "users" does not exist
+    
+PUT 400 0ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 5ms /users,
+    error message: relation "users" does not exist
+    
+DELETE 400 0ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 3ms /users,
+    error message: relation "users" does not exist
+    
+error in catch [object Object]
+GET 404 6ms /boards/d2db9c2d-0e5a-4640-a36c-ae0fd10622c5,
+    error message: Board with requested ID not found. Please check ID input
+    
+GET 404 14ms /boards/75f54edf-8a9b-4aa0-a11a-33f28d85b764/tasks/dd144711-ecfa-452e-bb25-2f616176bbb4,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 19ms /boards/75f54edf-8a9b-4aa0-a11a-33f28d85b764/tasks/392a0be7-5aa4-4e17-8dbe-23df31712b0c,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 13ms /boards/75f54edf-8a9b-4aa0-a11a-33f28d85b764/tasks/00c6c7e4-427c-4326-b2e2-4d8c9ff314f0,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 20ms /boards/75f54edf-8a9b-4aa0-a11a-33f28d85b764/tasks/296113e3-80e5-4fde-a835-281d8c8c0af0,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 21ms /boards/75f54edf-8a9b-4aa0-a11a-33f28d85b764/tasks/047c3275-663d-4f7f-a20e-9d0a8bef0d6a,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 5ms /boards/8b96f0d7-a2df-42e8-9f5a-793d3f976e94/tasks/4b103850-3090-4108-9a72-61487b293bfb,
+    error message: Task with requested ID not found. Please check ID input
+    
+error in catch [object Object]
+GET 404 7ms /boards/b0288e8d-b1bd-439c-842e-7becf21ff64e,
+    error message: Board with requested ID not found. Please check ID input
+    
+GET 404 6ms /boards/ef59f186-55ad-4d5e-a1c2-1a2983cbe923/tasks/6a924653-a130-4453-b05e-44f4a27234be,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 11ms /boards/ef59f186-55ad-4d5e-a1c2-1a2983cbe923/tasks/47ae59b9-5c4a-4cbb-ab5c-f050d2a1bd90,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 18ms /boards/ef59f186-55ad-4d5e-a1c2-1a2983cbe923/tasks/7af78c71-6c83-4310-9753-5160beb40d8a,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 22ms /boards/ef59f186-55ad-4d5e-a1c2-1a2983cbe923/tasks/9db446db-006e-42fc-ab5f-5d87a97c53c6,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 25ms /boards/ef59f186-55ad-4d5e-a1c2-1a2983cbe923/tasks/dfeba556-09a0-4050-ac62-8f5a5b0e61f2,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 500 1ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 3ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 2ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 3ms /users,
+    error message: relation "users" does not exist
+    
+PUT 400 1ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 7ms /users,
+    error message: relation "users" does not exist
+    
+DELETE 400 0ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 8ms /users,
+    error message: relation "users" does not exist
+    
+GET 404 6ms /boards/fa9219ae-6fd4-42f2-938c-bf603c5c6ad7/tasks/d80176a6-964f-4ca3-bb45-92333b9391f2,
+    error message: Task with requested ID not found. Please check ID input
+    
+error in catch [object Object]
+GET 404 5ms /boards/9c3f4fc7-91fe-449b-a785-9e24ca8bc099,
+    error message: Board with requested ID not found. Please check ID input
+    
+GET 404 5ms /boards/7a124a31-39b2-4d4b-bd25-a2e085fc8401/tasks/3804e0fe-83ed-455d-8939-77d92b7f176b,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 10ms /boards/7a124a31-39b2-4d4b-bd25-a2e085fc8401/tasks/c24ce704-7822-4175-9c16-5efde1a7d549,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 8ms /boards/7a124a31-39b2-4d4b-bd25-a2e085fc8401/tasks/437f453b-ed14-40fe-adf4-5bf5b4a51a18,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 13ms /boards/7a124a31-39b2-4d4b-bd25-a2e085fc8401/tasks/8d62d80e-3f0e-4be4-8201-28dcbfffd7ad,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 17ms /boards/7a124a31-39b2-4d4b-bd25-a2e085fc8401/tasks/25e74187-9f46-4a7c-8562-861c903637a3,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 500 2ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 4ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 4ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 3ms /users,
+    error message: relation "users" does not exist
+    
+PUT 400 0ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 3ms /users,
+    error message: relation "users" does not exist
+    
+DELETE 400 0ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 3ms /users,
+    error message: relation "users" does not exist
+    
+GET 404 6ms /boards/5c342f0d-5dec-4904-a929-bf01abeaafb9/tasks/b7d1539a-15e0-417f-990e-eb31581a0ee4,
+    error message: Task with requested ID not found. Please check ID input
+    
+POST 500 138ms /boards,
+    error message: relation "column_entity" does not exist
+    
+error in catch QueryFailedError: relation "column_entity" does not exist
+GET 500 11ms /boards,
+    error message: relation "board" does not exist
+    
+error in catch QueryFailedError: relation "board" does not exist
+error in catch QueryFailedError: relation "board" does not exist
+GET 500 4ms /boards,
+    error message: relation "board" does not exist
+    
+error in catch QueryFailedError: relation "column_entity" does not exist
+POST 500 4ms /boards,
+    error message: relation "column_entity" does not exist
+    
+error in catch QueryFailedError: relation "column_entity" does not exist
+POST 500 5ms /boards,
+    error message: relation "column_entity" does not exist
+    
+PUT 400 1ms /boards/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+error in catch QueryFailedError: relation "column_entity" does not exist
+POST 500 9ms /boards,
+    error message: relation "column_entity" does not exist
+    
+error in catch QueryFailedError: relation "column_entity" does not exist
+POST 500 10ms /boards,
+    error message: relation "column_entity" does not exist
+    
+DELETE 400 1ms /boards/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+GET 500 11ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 9ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 9ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 4ms /users,
+    error message: relation "users" does not exist
+    
+PUT 400 1ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 8ms /users,
+    error message: relation "users" does not exist
+    
+DELETE 400 0ms /users/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 500 6ms /users,
+    error message: relation "users" does not exist
+    
+error in catch QueryFailedError: relation "column_entity" does not exist
+POST 500 4ms /boards,
+    error message: relation "column_entity" does not exist
+    
+POST 400 3ms /boards/undefined/tasks,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+GET 400 0ms /boards/undefined/tasks,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+GET 400 4ms /boards/undefined/tasks,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 400 0ms /boards/undefined/tasks,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+POST 400 0ms /boards/undefined/tasks,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+PUT 400 1ms /boards/undefined/tasks/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+GET 400 0ms /boards/undefined/tasks/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+DELETE 400 0ms /boards/undefined,
+    error message: ID format is not the format that the UUID suggests (XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
+    
+GET 500 137ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 63ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 47ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 61ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 45ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 3ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 55ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 142ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 5ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 2ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 4ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 62ms /users,
+    error message: relation "users" does not exist
+    
+GET 500 2ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 22ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 170ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 145ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 5ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 272ms /users,
+    error message: relation "users" does not exist
+    
+POST 500 41ms /users,
+    error message: relation "users" does not exist
+    
+error in catch [object Object]
+GET 404 7ms /boards/11e86a3c-011a-4d96-b24d-129774af30ac,
+    error message: Board with requested ID not found. Please check ID input
+    
+GET 404 8ms /boards/d67972fa-e62e-4bff-9126-845783eee485/tasks/0519b532-ca14-4a9c-838a-5d2da3200846,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 9ms /boards/d67972fa-e62e-4bff-9126-845783eee485/tasks/0f56dcb6-8b8c-4d2f-828b-d5371dafc1f3,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 8ms /boards/d67972fa-e62e-4bff-9126-845783eee485/tasks/ea8e9812-476f-4fc4-a079-95a1d8dba39e,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 10ms /boards/d67972fa-e62e-4bff-9126-845783eee485/tasks/7cd94995-e284-4219-8e4b-c1bd68502008,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 14ms /boards/d67972fa-e62e-4bff-9126-845783eee485/tasks/bbb5d10e-57b6-470d-9e7f-4bc74c6db510,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 5ms /boards/acb8479f-2dbd-4665-a06f-959ea2a0d8d2/tasks/5231983f-ffb9-4a57-8b54-45825ad4fbf9,
+    error message: Task with requested ID not found. Please check ID input
+    
