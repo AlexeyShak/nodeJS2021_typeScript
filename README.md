@@ -16,7 +16,7 @@ git clone https://github.com/AlexeyShak/nodeJS2021_typeScript.git
 ## Checkout to task7-docker-basics branch
 
 ```
-git checkout task7-docker-basics 
+git checkout task8-posrgesql
 ```
 ## Installing NPM modules
 
@@ -26,13 +26,18 @@ npm install
 
 ##  Build docker images of an app & database
 
+
 ```
 docker-compose up --build
 ```
+!!! After starting an app and postgres in docker containers please create database. Database name should match with PG_DATABASE that you may specify in .env file(default name: rsschool).
 
-After starting the app on port (4000 as default) you can open
-in your browser OpenAPI documentation by typing http://localhost:4000/doc/.
-For more information about OpenAPI/Swagger please visit https://swagger.io/.
+
+
+
+ 
+
+
 
 ## Testing
 
