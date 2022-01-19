@@ -1,4 +1,5 @@
 import {v4 as uuidv4} from 'uuid';
+import bcrypt from 'bcryptjs';
 
 import { STATUS_CODES } from "../../constants/constants";
 import { ERRORS } from "../../constants/errors";
@@ -35,11 +36,12 @@ export const getUserById = async (userId: string) => {
  * @return user with ID instanse of IUser
  */
 export const createUser = async (newUser: IUserCreate) =>{
+    const hashPassword = bcrypt.hashSync(newUser.password, 3)
     const user = new User();
     user.id =  uuidv4();
     user.name = newUser.name;
     user.login = newUser.login;
-    user.password = newUser.password;
+    user.password = hashPassword;
     await user.save();
     return user.toResponse();
 }

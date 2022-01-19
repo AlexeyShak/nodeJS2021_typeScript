@@ -1616,3 +1616,25 @@ GET 404 14ms /boards/d67972fa-e62e-4bff-9126-845783eee485/tasks/bbb5d10e-57b6-47
 GET 404 5ms /boards/acb8479f-2dbd-4665-a06f-959ea2a0d8d2/tasks/5231983f-ffb9-4a57-8b54-45825ad4fbf9,
     error message: Task with requested ID not found. Please check ID input
     
+error in catch [object Object]
+GET 404 8ms /boards/4190932f-bf6c-4383-a7aa-0a9fedbfd6b2,
+    error message: Board with requested ID not found. Please check ID input
+    
+GET 404 6ms /boards/e36441ce-8eb2-44eb-8cd3-cfab065795b7/tasks/d37dc8ff-7d6c-4cef-bcea-9df4c910a95b,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 6ms /boards/e36441ce-8eb2-44eb-8cd3-cfab065795b7/tasks/0bd8df22-c6cf-427a-b68b-e5ad4c5dcf1d,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 7ms /boards/e36441ce-8eb2-44eb-8cd3-cfab065795b7/tasks/5aae4c2a-a279-4381-8358-e39ae9a77892,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 9ms /boards/e36441ce-8eb2-44eb-8cd3-cfab065795b7/tasks/c2cac0cd-2e3b-4a23-a151-461cc6fbb5a7,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 6ms /boards/e36441ce-8eb2-44eb-8cd3-cfab065795b7/tasks/8877bd39-c19f-40a1-81fb-1f2102c756c2,
+    error message: Task with requested ID not found. Please check ID input
+    
+GET 404 4ms /boards/dcd9a510-2cc5-4f94-8859-5627409fd2f8/tasks/b525874f-0473-45e0-a7bd-796fa2cafe56,
+    error message: Task with requested ID not found. Please check ID input
+    
