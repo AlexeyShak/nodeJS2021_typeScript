@@ -12006,3 +12006,167 @@ POST 201 152ms /users
     
 port: 4000
 port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+POST 201 85ms /users
+    query:  
+    
+    body: {"id":"e2e34855-060e-4945-a93a-3c1f65950ac5","name":"Uno2","login":"login uno"}
+    
+POST 201 11ms /users
+    query:  
+    
+    body: {"id":"b7bfbc56-90f7-4833-938c-0261810a252e","name":"Uno2","login":"login uno"}
+    
+GET 200 7ms /users
+    query:  
+    
+POST 201 81ms /users/login,
+    error message: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlMmUzNDg1NS0wNjBlLTQ5NDUtYTkzYS0zYzFmNjU5NTBhYzUiLCJsb2dpbiI6ImxvZ2luIHVubyIsImlhdCI6MTY0MjYwNDYwNiwiZXhwIjoxNjQyNjkxMDA2fQ.JQQvhKVXlWcJF-gy0MrAVt9i2A8dr0IUgENU2HFc6GE
+    
+POST 400 55ms /users/login,
+    error message: wrong password!
+    
+POST 201 6ms /users/login,
+    error message: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlMmUzNDg1NS0wNjBlLTQ5NDUtYTkzYS0zYzFmNjU5NTBhYzUiLCJsb2dpbiI6ImxvZ2luIHVubyIsImlhdCI6MTY0MjYwNDYyNywiZXhwIjoxNjQyNjkxMDI3fQ.hO0bgFQGJRTIwUyVIwOuS0nQwROTcSTevuuh5rlKdc0
+    

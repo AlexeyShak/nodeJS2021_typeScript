@@ -14,3 +14,7 @@ export interface IUserUpdate {
     login?: string,
     password?: string
 }
+ export interface IUserLogin {
+     login: string,
+     password: string
+ }

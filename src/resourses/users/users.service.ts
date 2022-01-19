@@ -1,12 +1,20 @@
 import {v4 as uuidv4} from 'uuid';
 import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 
 import { STATUS_CODES } from "../../constants/constants";
 import { ERRORS } from "../../constants/errors";
-import { IUserCreate, IUserUpdate } from "../../interfaces/users";
+import { IUserCreate, IUserLogin, IUserUpdate } from "../../interfaces/users";
 import { User } from "./users.memory.repository";
 
 
+const generateAccessToken = (userId:string, login:string) =>{
+    const payLoad = { 
+        userId,
+        login
+    }
+    return jwt.sign(payLoad, process.env.JWT_SECRET_KEY as string, { expiresIn: '24h'})
+}
 /**
  * Function which returns all users without property "password" to users router
  * @return all users instanse of IUser[] to users router
@@ -45,7 +53,14 @@ export const createUser = async (newUser: IUserCreate) =>{
     await user.save();
     return user.toResponse();
 }
-
+export const createToken = async (newLogin: IUserLogin)=>{
+    const user = await User.findOne({login: newLogin.login});
+    if(!user) throw {message: ERRORS.USER_NOT_FOUND, status: STATUS_CODES.NOT_FOUND};
+    const validPassword = bcrypt.compareSync(newLogin.password, user.password);
+    if(!validPassword) throw {message:  ERRORS.WRONG_PASSWORD, status: STATUS_CODES.BAD_REQUEST};
+    const token = generateAccessToken(user.id, user.login);
+    return token;
+}
 /**
  * Function which creates new user and returns it to users router
  * @param newBoardData - requested user data instance of IUserUpdate
@@ -76,3 +91,4 @@ export const deleteUser = async (userId: string): Promise<number> => {
     await User.remove(user);
     return STATUS_CODES.NO_CONTENT; 
 }
+

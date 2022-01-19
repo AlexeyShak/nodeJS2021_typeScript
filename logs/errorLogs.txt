@@ -1638,3 +1638,12 @@ GET 404 6ms /boards/e36441ce-8eb2-44eb-8cd3-cfab065795b7/tasks/8877bd39-c19f-40a
 GET 404 4ms /boards/dcd9a510-2cc5-4f94-8859-5627409fd2f8/tasks/b525874f-0473-45e0-a7bd-796fa2cafe56,
     error message: Task with requested ID not found. Please check ID input
     
+POST 201 81ms /users/login,
+    error message: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlMmUzNDg1NS0wNjBlLTQ5NDUtYTkzYS0zYzFmNjU5NTBhYzUiLCJsb2dpbiI6ImxvZ2luIHVubyIsImlhdCI6MTY0MjYwNDYwNiwiZXhwIjoxNjQyNjkxMDA2fQ.JQQvhKVXlWcJF-gy0MrAVt9i2A8dr0IUgENU2HFc6GE
+    
+POST 400 55ms /users/login,
+    error message: wrong password!
+    
+POST 201 6ms /users/login,
+    error message: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlMmUzNDg1NS0wNjBlLTQ5NDUtYTkzYS0zYzFmNjU5NTBhYzUiLCJsb2dpbiI6ImxvZ2luIHVubyIsImlhdCI6MTY0MjYwNDYyNywiZXhwIjoxNjQyNjkxMDI3fQ.hO0bgFQGJRTIwUyVIwOuS0nQwROTcSTevuuh5rlKdc0
+    
