@@ -19,7 +19,7 @@ app.listen(CONFIG.PORT, async () => {
     type: 'postgres',
     host: 'nodejs2021_typescript_database_1',
     port: PG_PORT,
-    username: 'postgres',
+    username: PG_USER,
     password: PG_PASSWORD,
     database: PG_DATABASE,
   //   migrations: ["migration/*.ts"],

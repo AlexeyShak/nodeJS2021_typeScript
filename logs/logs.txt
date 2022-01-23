@@ -12170,3 +12170,780 @@ POST 400 55ms /users/login,
 POST 201 6ms /users/login,
     error message: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlMmUzNDg1NS0wNjBlLTQ5NDUtYTkzYS0zYzFmNjU5NTBhYzUiLCJsb2dpbiI6ImxvZ2luIHVubyIsImlhdCI6MTY0MjYwNDYyNywiZXhwIjoxNjQyNjkxMDI3fQ.hO0bgFQGJRTIwUyVIwOuS0nQwROTcSTevuuh5rlKdc0
     
+port: 4000
+port: 4000
+POST 403 91ms /users/login,
+    error message: User with requested ID not found. Please check ID input
+    
+POST 400 0ms /users,
+    error message: User property "name" not entered or spelled incorrectly
+    
+GET 200 58ms /users
+    query:  
+    
+POST 201 54ms /users
+    query:  
+    
+    body: {"id":"a275e627-2b2a-495f-a844-24e15b966cef","name":"Uno2","login":"login uno","password":"$2a$04$.Ut1CVpzgUNHptRCVcT7IuZ8QkFmNq/pq8GK7/CFFuE9KJw0HMLhG"}
+    
+POST 201 58ms /users
+    query:  
+    
+    body: {"id":"53d132f9-2bec-463a-94c1-f809a8ab4a1b","name":"Uno1","login":"login dos","password":"$2a$04$V1FgadGq9Hziy79Yjqnal.cnkH.XRtBi2jQR54JK8wJxLqKhlgf.u"}
+    
+GET 200 4ms /users
+    query:  
+    
+POST 404 0ms /users/login%20,
+    error message: URL for users has wrong format
+    
+POST 404 0ms /users/login%20,
+    error message: URL for users has wrong format
+    
+GET 200 48ms /users
+    query:  
+    
+POST 404 1ms /users/login%20,
+    error message: URL for users has wrong format
+    
+port: 4000
+port: 4000
+POST 404 3ms /users/login%20,
+    error message: URL for users has wrong format
+    
+POST 404 0ms /users/login%20,
+    error message: URL for users has wrong format
+    
+POST 404 0ms /users/login%20,
+    error message: URL for users has wrong format
+    
+GET 200 114ms /users
+    query:  
+    
+GET 200 60ms /users
+    query:  
+    
+POST 400 82ms /users/login,
+    error message: wrong password!
+    
+POST 201 11ms /users/login,
+    error message: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhMjc1ZTYyNy0yYjJhLTQ5NWYtYTg0NC0yNGUxNWI5NjZjZWYiLCJsb2dpbiI6ImxvZ2luIHVubyIsImlhdCI6MTY0MjYxMTAyMywiZXhwIjoxNjQyNjk3NDIzfQ.pZnnBNZ3II05fvyEKu4GEs_4XPUzCnGNoTYhsKW7MTA
+    
+POST 201 91ms /users
+    query:  
+    
+    body: {"id":"c9273157-1023-4519-ba0e-811281767522","name":"alesha","login":"al123","password":"$2a$04$ZM6zZazEK5Le1WgiH3tbRewXCXMowv50L7NeOP6Vm3F0vTWby7nfy"}
+    
+GET 200 5ms /users
+    query:  
+    
+POST 201 55ms /users/login,
+    error message: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjOTI3MzE1Ny0xMDIzLTQ1MTktYmEwZS04MTEyODE3Njc1MjIiLCJsb2dpbiI6ImFsMTIzIiwiaWF0IjoxNjQyNjExMzc2LCJleHAiOjE2NDI2OTc3NzZ9.wNbOc3kqzTW5m9b4VeLap7PgcDiSsHfWIuKI7jwp150
+    
+port: 4000
+POST 201 61ms /users/login
+    query:  
+    
+    body: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjOTI3MzE1Ny0xMDIzLTQ1MTktYmEwZS04MTEyODE3Njc1MjIiLCJsb2dpbiI6ImFsMTIzIiwiaWF0IjoxNjQyNjExNTQ1LCJleHAiOjE2NDI2OTc5NDV9.7Cb1dELeEqypZ42yLQP3BHRWXpIBfhxdy4laMkjl4-0"
+    
+POST 201 124ms /users
+    query:  
+    
+    body: {"id":"9bf055fb-6fec-4ece-983f-2aa414b24f1e","name":"Artyom","login":"archiBigDic","password":"$2a$04$Uka/GWeXDRA15BifRQgPM.seLXGfDCz052tgmT6KaR.LMtXSsGCmK"}
+    
+POST 201 76ms /users/login
+    query:  
+    
+    body: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI5YmYwNTVmYi02ZmVjLTRlY2UtOTgzZi0yYWE0MTRiMjRmMWUiLCJsb2dpbiI6ImFyY2hpQmlnRGljIiwiaWF0IjoxNjQyNjEyNTU0LCJleHAiOjE2NDI2OTg5NTR9.csghMF6wi1vKCt9eMLh936G62aUR3RB0BR2jcsY8OjI"
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+POST 201 174ms /users
+    query:  
+    
+    body: {"id":"db47d1fe-0306-45b6-a070-433b6dee0923","name":"Tom","login":"archiBigDic","password":"$2a$04$yUBaa5XWqmt53f.9481IuOKYWnwYpUFpfEtkP491Z2Zg3Pb2uHQti"}
+    
+POST 201 84ms /users/login
+    query:  
+    
+    body: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI5YmYwNTVmYi02ZmVjLTRlY2UtOTgzZi0yYWE0MTRiMjRmMWUiLCJsb2dpbiI6ImFyY2hpQmlnRGljIiwiaWF0IjoxNjQyNjEzNDY4LCJleHAiOjE2NDI2OTk4Njh9.WUhiAhjVPkdMWcSTHvYLDeNFkvxcOaDCrwTvOiNlYWg"
+    
+POST 403 7ms /users/login,
+    error message: User with requested ID not found. Please check ID input
+    
+POST 400 6ms /users/login,
+    error message: wrong password!
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+POST 400 152ms /users/login,
+    error message: wrong password!
+    
+POST 201 80ms /users/login
+    query:  
+    
+    body: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI5YmYwNTVmYi02ZmVjLTRlY2UtOTgzZi0yYWE0MTRiMjRmMWUiLCJsb2dpbiI6ImFyY2hpQmlnRGljIiwiaWF0IjoxNjQyNjE0ODYxLCJleHAiOjE2NDI3MDEyNjF9.8lrns_tTfF0raBnJ4L1_YmDrajrlPYZrzf5RWLrCF2g"
+    
+POST 201 67ms /users/login
+    query:  
+    
+    body: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI5YmYwNTVmYi02ZmVjLTRlY2UtOTgzZi0yYWE0MTRiMjRmMWUiLCJsb2dpbiI6ImFyY2hpQmlnRGljIiwiaWF0IjoxNjQyNjE0ODg3LCJleHAiOjE2NDI3MDEyODd9.TUvlc3mo6jpvekpP1x7bb7XmxApWrtg1hfv2Nr7JjCs"
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+GET 200 70ms /users
+    query:  
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+GET 200 42ms /users
+    query:  
+    
+GET 200 12ms /users
+    query:  
+    
+POST 400 108ms /login,
+    error message: wrong password!
+    
+GET 200 5ms /users
+    query:  
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+POST 400 107ms /login,
+    error message: wrong password!
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+POST 400 111ms /login,
+    error message: wrong password!
+    
+POST 400 12ms /login,
+    error message: wrong password!
+    
+GET 200 105ms /users
+    query:  
+    
+GET 200 9ms /users
+    query:  
+    
+GET 200 86ms /users
+    query:  
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+DELETE 204 135ms /users/48479df0-0e1b-4bfd-97ae-f7526d54a8f6
+    query:  
+    
+GET 200 5ms /users
+    query:  
+    
+DELETE 204 94ms /users/6d388871-123c-487e-876c-9b4e361f287f
+    query:  
+    
+GET 200 4ms /users
+    query:  
+    
+DELETE 404 81ms /users/cc6c8ed1-00bf-4131-83f8-1e1b7001e498%22,
+    error message: User with requested ID not found. Please check ID input
+    
+GET 200 3ms /users
+    query:  
+    
+DELETE 204 95ms /users/cc6c8ed1-00bf-4131-83f8-1e1b7001e498
+    query:  
+    
+GET 200 4ms /users
+    query:  
+    
+DELETE 204 89ms /users/f47d717f-e7c0-46f3-96e6-920037f34a71
+    query:  
+    
+GET 200 3ms /users
+    query:  
+    
+DELETE 204 96ms /users/6504b485-1f33-4765-9938-646d026f051e
+    query:  
+    
+GET 200 3ms /users
+    query:  
+    
+DELETE 204 87ms /users/eec45598-242e-4a4d-a369-e314cd1bed57
+    query:  
+    
+GET 200 3ms /users
+    query:  
+    
+DELETE 204 91ms /users/15eb093d-f45b-4cdd-a1eb-c09c1df9651b
+    query:  
+    
+GET 200 2ms /users
+    query:  
+    
+DELETE 204 87ms /users/6a002b0e-a578-42b5-8d11-37389faea59a
+    query:  
+    
+GET 200 3ms /users
+    query:  
+    
+DELETE 404 78ms /users/4f25bd28-daa3-4c63-b6f6-848bad34e1cd%22,
+    error message: User with requested ID not found. Please check ID input
+    
+DELETE 204 13ms /users/4f25bd28-daa3-4c63-b6f6-848bad34e1cd
+    query:  
+    
+GET 200 4ms /users
+    query:  
+    
+DELETE 204 85ms /users/c37b427a-03fd-44dd-9b5a-4e3007f90fbd
+    query:  
+    
+GET 200 2ms /users
+    query:  
+    
+GET 200 5ms /users
+    query:  
+    
+GET 200 4ms /users
+    query:  
+    
+GET 200 2ms /users
+    query:  
+    
+GET 200 2ms /users
+    query:  
+    
+POST 201 9ms /login
+    query:  
+    
+    body: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI5MWJlNGE1ZC0zN2E2LTQwM2QtYjY1Ny03NjMxZjQ5NzhhZGIiLCJsb2dpbiI6ImFkbWluIiwiaWF0IjoxNjQyODk1NjU5LCJleHAiOjE2NDI5ODIwNTl9.CEr-kFw6n1H0u3ChtpdyWB62vrL2prHMPndaIWGG7dI"
+    
+GET 200 76ms /users
+    query:  
+    
+GET 200 6ms /boards
+    query:  
+    
+GET 200 3ms /users
+    query:  
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: undefined
+port: undefined
+port: undefined
+port: undefined
+port: undefined
+port: undefined
+port: undefined
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+GET 200 127ms /users
+    query:  
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+GET 200 64ms /users
+    query:  
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+GET 200 79ms /users
+    query:  
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+GET 200 151ms /users
+    query:  
+    
+GET 200 117ms /users
+    query:  
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+GET 200 100ms /users
+    query:  
+    
+GET 200 117ms /users
+    query:  
+    
+port: 4000
+GET 200 119ms /users
+    query:  
+    
+port: 4000
+GET 200 85ms /users
+    query:  
+    
+GET 200 110ms /users
+    query:  
+    
+POST 201 108ms /login
+    query:  
+    
+    body: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI5MWJlNGE1ZC0zN2E2LTQwM2QtYjY1Ny03NjMxZjQ5NzhhZGIiLCJsb2dpbiI6ImFkbWluIiwiaWF0IjoxNjQyODk5NTU5LCJleHAiOjE2NDI5ODU5NTl9.L9AShMdD8OpIzwjUpYCo_Vr0WmLYto9Y7x9NeS30wOU"
+    
+GET 200 81ms /users
+    query:  
+    
+GET 200 93ms /users
+    query:  
+    
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+port: 4000
+GET 200 91ms /users
+    query:  
+    
+GET 200 102ms /users
+    query:  
+    

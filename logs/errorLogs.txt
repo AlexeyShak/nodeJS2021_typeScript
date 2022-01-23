@@ -1647,3 +1647,63 @@ POST 400 55ms /users/login,
 POST 201 6ms /users/login,
     error message: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlMmUzNDg1NS0wNjBlLTQ5NDUtYTkzYS0zYzFmNjU5NTBhYzUiLCJsb2dpbiI6ImxvZ2luIHVubyIsImlhdCI6MTY0MjYwNDYyNywiZXhwIjoxNjQyNjkxMDI3fQ.hO0bgFQGJRTIwUyVIwOuS0nQwROTcSTevuuh5rlKdc0
     
+POST 403 91ms /users/login,
+    error message: User with requested ID not found. Please check ID input
+    
+POST 400 0ms /users,
+    error message: User property "name" not entered or spelled incorrectly
+    
+POST 404 0ms /users/login%20,
+    error message: URL for users has wrong format
+    
+POST 404 0ms /users/login%20,
+    error message: URL for users has wrong format
+    
+POST 404 1ms /users/login%20,
+    error message: URL for users has wrong format
+    
+POST 404 3ms /users/login%20,
+    error message: URL for users has wrong format
+    
+POST 404 0ms /users/login%20,
+    error message: URL for users has wrong format
+    
+POST 404 0ms /users/login%20,
+    error message: URL for users has wrong format
+    
+POST 400 82ms /users/login,
+    error message: wrong password!
+    
+POST 201 11ms /users/login,
+    error message: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhMjc1ZTYyNy0yYjJhLTQ5NWYtYTg0NC0yNGUxNWI5NjZjZWYiLCJsb2dpbiI6ImxvZ2luIHVubyIsImlhdCI6MTY0MjYxMTAyMywiZXhwIjoxNjQyNjk3NDIzfQ.pZnnBNZ3II05fvyEKu4GEs_4XPUzCnGNoTYhsKW7MTA
+    
+POST 201 55ms /users/login,
+    error message: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjOTI3MzE1Ny0xMDIzLTQ1MTktYmEwZS04MTEyODE3Njc1MjIiLCJsb2dpbiI6ImFsMTIzIiwiaWF0IjoxNjQyNjExMzc2LCJleHAiOjE2NDI2OTc3NzZ9.wNbOc3kqzTW5m9b4VeLap7PgcDiSsHfWIuKI7jwp150
+    
+POST 403 7ms /users/login,
+    error message: User with requested ID not found. Please check ID input
+    
+POST 400 6ms /users/login,
+    error message: wrong password!
+    
+POST 400 152ms /users/login,
+    error message: wrong password!
+    
+POST 400 108ms /login,
+    error message: wrong password!
+    
+POST 400 107ms /login,
+    error message: wrong password!
+    
+POST 400 111ms /login,
+    error message: wrong password!
+    
+POST 400 12ms /login,
+    error message: wrong password!
+    
+DELETE 404 81ms /users/cc6c8ed1-00bf-4131-83f8-1e1b7001e498%22,
+    error message: User with requested ID not found. Please check ID input
+    
+DELETE 404 78ms /users/4f25bd28-daa3-4c63-b6f6-848bad34e1cd%22,
+    error message: User with requested ID not found. Please check ID input
+    

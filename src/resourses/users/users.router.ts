@@ -3,9 +3,9 @@ import { REQUEST_METHODS, STATUS_CODES } from "../../constants/constants";
 import { ERRORS } from "../../constants/errors";
 import { requestDataExtractor } from "../../helpers/request";
 import { sendResponse } from "../../helpers/response";
-import { IUserCreate, IUserLogin, IUserUpdate } from "../../interfaces/users";
-import {  getAllUsers, getUserById, createUser, deleteUser, updateUser, createToken} from "./users.service";
-import {postLoginObjValodator, postObjValidator, putObjValidator} from "../../validators/userValidator"
+import { IUserCreate, IUserUpdate } from "../../interfaces/users";
+import {  getAllUsers, getUserById, createUser, deleteUser, updateUser} from "./users.service";
+import { postObjValidator, putObjValidator} from "../../validators/userValidator"
 import { IError } from '../../interfaces/errors';
 
 
@@ -48,18 +48,7 @@ export const usersController = async (req: IncomingMessage, res: ServerResponse,
             const user = await createUser(dataObj);
             return sendResponse(reqData, res, STATUS_CODES.CREATED, time, user)
         }
-        if(req.method === REQUEST_METHODS.POST && req.url === '/users/login'){
-            const data = await requestDataExtractor(req);
-            let dataObj: IUserLogin;
-            try {
-                 dataObj = JSON.parse(data);
-            } catch(e) {
-             return sendResponse(reqData, res, STATUS_CODES.SERVER_ERROR, time, ERRORS.JSON_PARSE_ERR);
-            }
-             postLoginObjValodator(dataObj);
-             const token = await createToken(dataObj);
-             return sendResponse(reqData, res, STATUS_CODES.CREATED, time, token)
-         }
+
 
         if(req.method === REQUEST_METHODS.PUT && urlValidator.test(url)){
             const userId: string = url.split('/')[2];

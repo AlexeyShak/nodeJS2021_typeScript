@@ -8,6 +8,10 @@ import { tasksController } from './resourses/tasks/tasks.router';
 import { usersController } from './resourses/users/users.router';
 import { loggerUncaught, loggerUnhandled, logLogger } from './helpers/logger';
 import { LOG_LEVELS } from './constants/constants';
+import { loginController } from './resourses/login/login.router';
+import { createAdmin } from './resourses/login/login.service';
+import {authMiddleware} from './middleware/authMiddleware'
+
 
 
 
@@ -42,6 +46,14 @@ export const app = createServer((request: IncomingMessage, response: ServerRespo
     try{
         const url = request.url as string;
         const time = new Date().getTime();
+
+        createAdmin();
+
+        if(url === '/login'){
+            return loginController(request, response, time);
+        }
+        authMiddleware( request, response);
+
         if(url.startsWith('/users')){
             return usersController(request, response, time);
         }

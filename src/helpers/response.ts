@@ -18,7 +18,7 @@ export const sendResponse =  (req: IncomingMessage, res: ServerResponse, status:
       }
     )
     data = data ? data : {};
-    if(typeof data !== 'string' && !Object.prototype.hasOwnProperty.call(data, 'message')){
+    if( !Object.prototype.hasOwnProperty.call(data, 'message')){
       loggerSuccess(LOG_LEVELS.INFO, req, status, time, data);
     }
     else {

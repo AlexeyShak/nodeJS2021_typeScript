@@ -1,29 +1,22 @@
 import {v4 as uuidv4} from 'uuid';
 import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
+
 
 import { STATUS_CODES } from "../../constants/constants";
 import { ERRORS } from "../../constants/errors";
-import { IUserCreate, IUserLogin, IUserUpdate } from "../../interfaces/users";
+import { IUserCreate, IUserUpdate } from "../../interfaces/users";
 import { User } from "./users.memory.repository";
 
 
-const generateAccessToken = (userId:string, login:string) =>{
-    const payLoad = { 
-        userId,
-        login
-    }
-    return jwt.sign(payLoad, process.env.JWT_SECRET_KEY as string, { expiresIn: '24h'})
-}
 /**
  * Function which returns all users without property "password" to users router
  * @return all users instanse of IUser[] to users router
  */
 
-export const getAllUsers = async () => {
+export const getAllUsers = async ():Promise<User[]> => {
 
     const users = await User.find();
-    return users.map(user => user.toResponse())
+    return users.map(user => user.toResponse() as User)
     
 }
 
@@ -44,23 +37,16 @@ export const getUserById = async (userId: string) => {
  * @return user with ID instanse of IUser
  */
 export const createUser = async (newUser: IUserCreate) =>{
-    const hashPassword = bcrypt.hashSync(newUser.password, 3)
+    const hashPassword = bcrypt.hashSync(newUser.password, 3);
     const user = new User();
     user.id =  uuidv4();
     user.name = newUser.name;
     user.login = newUser.login;
     user.password = hashPassword;
     await user.save();
-    return user.toResponse();
+    return user;
 }
-export const createToken = async (newLogin: IUserLogin)=>{
-    const user = await User.findOne({login: newLogin.login});
-    if(!user) throw {message: ERRORS.USER_NOT_FOUND, status: STATUS_CODES.NOT_FOUND};
-    const validPassword = bcrypt.compareSync(newLogin.password, user.password);
-    if(!validPassword) throw {message:  ERRORS.WRONG_PASSWORD, status: STATUS_CODES.BAD_REQUEST};
-    const token = generateAccessToken(user.id, user.login);
-    return token;
-}
+
 /**
  * Function which creates new user and returns it to users router
  * @param newBoardData - requested user data instance of IUserUpdate
