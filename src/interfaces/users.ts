@@ -18,3 +18,8 @@ export interface IUserUpdate {
      login: string,
      password: string
  }
+
+ export interface IPayLoad {
+     userId: string,
+     login: string
+ }

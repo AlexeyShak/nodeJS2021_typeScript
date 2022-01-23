@@ -10,7 +10,7 @@ import { createToken } from "./login.service";
 
 export const loginController= async (req: IncomingMessage, res: ServerResponse, time: number): Promise<void> => {
     const url = req.url as string;
-    const reqData = req;
+
     try {
         if(req.method === REQUEST_METHODS.POST && url === '/login'){
             const data = await requestDataExtractor(req);
@@ -18,16 +18,16 @@ export const loginController= async (req: IncomingMessage, res: ServerResponse, 
             try {
                 dataObj = JSON.parse(data);
             } catch(e) {
-            return sendResponse(reqData, res, STATUS_CODES.SERVER_ERROR, time, ERRORS.JSON_PARSE_ERR);
+            return sendResponse(req, res, STATUS_CODES.SERVER_ERROR, time, ERRORS.JSON_PARSE_ERR);
             }
             postLoginObjValodator(dataObj);
             const token = await createToken(dataObj);
-            return sendResponse(reqData, res, STATUS_CODES.CREATED, time, token)
+            return sendResponse(req, res, STATUS_CODES.CREATED, time, token)
         }
     }catch (e: unknown) {
         const transformedE = e as IError;
         const status = transformedE.status ? transformedE.status : STATUS_CODES.SERVER_ERROR;
-        sendResponse(reqData, res, status, time, transformedE);
+        sendResponse(req, res, status, time, transformedE);
     }
    
 }

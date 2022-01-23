@@ -13,7 +13,12 @@ import { ColumnEntity } from '../columns/columns';
  */
 
 export const getAllBoards = async ():Promise<Board[]> => {
-    const allBoards = await Board.find({relations: ['columns']});
+    const allBoards = await Board.find({relations: ['columns']})
+    allBoards.forEach(board => {
+        board.columns.sort((col1, col2) => {
+            return (col1.order - col2.order);
+        })
+    })
     return allBoards;
 };
 /**
@@ -24,7 +29,10 @@ export const getAllBoards = async ():Promise<Board[]> => {
 
 export const getBoardById = async (boardId: string): Promise<Board> => {
     const result = await Board.findOne({id: boardId}, { relations: ['columns']});
-    if(!result) throw { message: ERRORS.BOARD_NOT_FOUND, status: STATUS_CODES.NOT_FOUND}
+    if(!result) throw { message: ERRORS.BOARD_NOT_FOUND, status: STATUS_CODES.NOT_FOUND};
+    result.columns.sort((col1, col2) => {
+        return (col1.order - col2.order);
+    })
     return result;
 };
 /**

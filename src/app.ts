@@ -3,14 +3,16 @@ import 'reflect-metadata';
 import dotenv from 'dotenv';
 import process from 'process';
 
+
+
 import { boardsController } from './resourses/boards/board.router';
 import { tasksController } from './resourses/tasks/tasks.router';
 import { usersController } from './resourses/users/users.router';
 import { loggerUncaught, loggerUnhandled, logLogger } from './helpers/logger';
-import { LOG_LEVELS } from './constants/constants';
+import { LOG_LEVELS, STATUS_CODES } from './constants/constants';
 import { loginController } from './resourses/login/login.router';
-import { createAdmin } from './resourses/login/login.service';
-import {authMiddleware} from './middleware/authMiddleware'
+import { authMiddleware } from './middleware/auth.middleware';
+import { IError } from './interfaces/errors'
 
 
 
@@ -28,7 +30,7 @@ dotenv.config();
  */
 
 logLogger(LOG_LEVELS.INFO, `port: ${process.env.PORT}`);
-export const app = createServer((request: IncomingMessage, response: ServerResponse) => {
+export const app = createServer(async (request: IncomingMessage, response: ServerResponse) => {
     process.on('uncaughtException', (err, origin) =>{
         loggerUncaught(err, origin);
         response.writeHead(500, {
@@ -46,14 +48,10 @@ export const app = createServer((request: IncomingMessage, response: ServerRespo
     try{
         const url = request.url as string;
         const time = new Date().getTime();
-
-        createAdmin();
-
         if(url === '/login'){
             return loginController(request, response, time);
         }
-        authMiddleware( request, response);
-
+        await authMiddleware(request, response);
         if(url.startsWith('/users')){
             return usersController(request, response, time);
         }
@@ -63,9 +61,12 @@ export const app = createServer((request: IncomingMessage, response: ServerRespo
             }
           return boardsController(request, response, time);
         }
-    }catch (e){
+    }catch (e: unknown){
         console.log('error e:', e);
-        response.end(JSON.stringify(e));
+        const transformedE = e as IError;
+        const status = transformedE?.status ? transformedE.status : STATUS_CODES.SERVER_ERROR;
+        response.writeHead(status);
+        return response.end(JSON.stringify(e));
     }
     response.end('petrucchoe');
 })

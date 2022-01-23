@@ -8,8 +8,8 @@ import { IUserLogin } from '../../interfaces/users';
 import { User } from '../users/users.memory.repository';
 
 export const createAdmin = async () => {
-    const admin = await User.findOne({login: 'admin'});
-    if(!admin){
+    const oldAdmin = await User.findOne({login: 'admin'});
+    if(!oldAdmin){
         const hashPassword = bcrypt.hashSync('admin', 3)
         const admin = new User();
         admin.id = uuidv4();
@@ -35,5 +35,5 @@ export const createToken = async (newLogin: IUserLogin)=>{
     const validPassword = bcrypt.compareSync(newLogin.password, user.password);
     if(!validPassword) throw {message:  ERRORS.WRONG_PASSWORD, status: STATUS_CODES.BAD_REQUEST};
     const token = generateAccessToken(user.id, user.login);
-    return token;
+    return {token};
 }

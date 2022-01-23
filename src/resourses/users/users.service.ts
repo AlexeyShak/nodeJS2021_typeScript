@@ -44,7 +44,7 @@ export const createUser = async (newUser: IUserCreate) =>{
     user.login = newUser.login;
     user.password = hashPassword;
     await user.save();
-    return user;
+    return user.toResponse();
 }
 
 /**
