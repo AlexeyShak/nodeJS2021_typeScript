@@ -1,6 +1,6 @@
 
-import { IncomingMessage, ServerResponse, STATUS_CODES } from 'http';
-import { LOG_LEVELS, REQUEST_METHODS } from '../constants/constants';
+import { IncomingMessage, ServerResponse } from 'http';
+import { LOG_LEVELS} from '../constants/constants';
 import { IError } from '../interfaces/errors';
 import { loggerErrors, loggerSuccess } from './logger';
 
@@ -18,7 +18,7 @@ export const sendResponse =  (req: IncomingMessage, res: ServerResponse, status:
       }
     )
     data = data ? data : {};
-    if(typeof data !== 'string' && !Object.prototype.hasOwnProperty.call(data, 'message')){
+    if( !Object.prototype.hasOwnProperty.call(data, 'message')){
       loggerSuccess(LOG_LEVELS.INFO, req, status, time, data);
     }
     else {

@@ -1,23 +1,29 @@
-import { IUser } from "../../interfaces/users";
+import 'reflect-metadata'
+import { Entity, Column, PrimaryColumn, BaseEntity, OneToMany} from "typeorm";
+import { Task } from '../tasks/tasks.memory.repository'
 
+@Entity({name: 'users'})
+export class User extends BaseEntity {
+  @PrimaryColumn()
+  id!: string;
 
-export let users: IUser[] = [{
-    id: '73dfa0d7-e233-4762-9037-5ac8f433c971',
-    name: 'Random User',
-    login: 'login',
-    password: 'password'
-},
-{
-    id: "73dfa0d7-e233-4762-0000-000000000000",
-    name: 'Alesha',
-    login: 'login',
-    password: 'password'  
-}];
- /**
- * Method to modify User with responsed data
- * @param data - modyfied data instance of IUser[]
- * @returns void
- */
-export const usersModify =(data:IUser[]):void =>{
-    users = data;
+  @Column()
+  name!: string;
+
+  @Column()
+  login!: string;
+
+  @Column()
+  password!: string;
+
+  @OneToMany(() => Task, (task) => task.user)
+  tasks!: Task[];
+
+  toResponse() {
+    return {
+      id: this.id,
+      name: this.name,
+      login: this.login,
+    };
+  }
 }

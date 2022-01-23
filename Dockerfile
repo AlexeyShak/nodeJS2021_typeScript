@@ -1,4 +1,6 @@
-FROM node:16-alpine
+FROM node:16
+
+EXPOSE 4000
 
 WORKDIR /src
 

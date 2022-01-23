@@ -4,11 +4,10 @@ import { ERRORS } from "../../constants/errors";
 import { requestDataExtractor } from "../../helpers/request";
 import { sendResponse } from "../../helpers/response";
 import { IUserCreate, IUserUpdate } from "../../interfaces/users";
-import { createUser, deleteUser, getAllUsers, getUserById, updateUser } from "./users.service";
-import {postObjValidator, putObjValidator} from "../../validators/userValidator"
+import {  getAllUsers, getUserById, createUser, deleteUser, updateUser} from "./users.service";
+import { postObjValidator, putObjValidator} from "../../validators/userValidator"
 import { IError } from '../../interfaces/errors';
-import { setBoards } from '../boards/board.memory.repository';
-import { exit } from 'process';
+
 
 
 const uuidValidator = /(\b[0-9a-f]{8}\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\b[0-9a-f]{12}\b)/;
@@ -25,7 +24,8 @@ export const usersController = async (req: IncomingMessage, res: ServerResponse,
     const reqData = req;
     try {
         if(req.method === REQUEST_METHODS.GET && req.url === '/users' ){
-            return sendResponse(reqData, res, STATUS_CODES.OK, time, getAllUsers());
+            const users = await getAllUsers();
+            return sendResponse(reqData, res, STATUS_CODES.OK, time, users);
         }
         if(req.method === REQUEST_METHODS.GET && urlValidator.test(url)){
             const userId: string = url.split('/')[2];
@@ -33,7 +33,7 @@ export const usersController = async (req: IncomingMessage, res: ServerResponse,
                 return sendResponse(reqData, res, STATUS_CODES.BAD_REQUEST, time, ERRORS.WRONG_ID_FORMAT);  
             }
             
-            const user = getUserById(userId);
+            const user = await getUserById(userId);
             return sendResponse(reqData, res, STATUS_CODES.OK, time, user);
         }
         if(req.method === REQUEST_METHODS.POST && req.url === '/users'){
@@ -45,9 +45,11 @@ export const usersController = async (req: IncomingMessage, res: ServerResponse,
             return sendResponse(reqData, res, STATUS_CODES.SERVER_ERROR, time, ERRORS.JSON_PARSE_ERR);
            }
             postObjValidator(dataObj);
-            const user = createUser(dataObj)
+            const user = await createUser(dataObj);
             return sendResponse(reqData, res, STATUS_CODES.CREATED, time, user)
         }
+
+
         if(req.method === REQUEST_METHODS.PUT && urlValidator.test(url)){
             const userId: string = url.split('/')[2];
             if(!uuidValidator.test(userId)){
@@ -61,7 +63,7 @@ export const usersController = async (req: IncomingMessage, res: ServerResponse,
             return sendResponse(reqData, res, STATUS_CODES.SERVER_ERROR, time, ERRORS.JSON_PARSE_ERR);
             }
                putObjValidator(dataObj);
-               const user = updateUser(dataObj, userId);
+               const user = await updateUser(dataObj, userId);
                return sendResponse(reqData, res, STATUS_CODES.OK, time, user);
         }
         if(req.method === REQUEST_METHODS.DELETE && urlValidator.test(url)){
@@ -69,10 +71,7 @@ export const usersController = async (req: IncomingMessage, res: ServerResponse,
             if(!uuidValidator.test(userId)){
                 return sendResponse(reqData, res, STATUS_CODES.BAD_REQUEST, time, ERRORS.WRONG_ID_FORMAT);
             }
-            const deletionResult = deleteUser(userId);
-            if(typeof deletionResult === 'string'){
-                return sendResponse(reqData, res, STATUS_CODES.NOT_FOUND, time, deletionResult);
-            }
+            const deletionResult = await deleteUser(userId);
             return sendResponse(reqData, res, deletionResult, time);
         }
         return sendResponse(reqData, res, STATUS_CODES.NOT_FOUND, time,  ERRORS.WROND_URL_FORMAT);
@@ -81,6 +80,6 @@ export const usersController = async (req: IncomingMessage, res: ServerResponse,
         const status = transformedE.status ? transformedE.status : STATUS_CODES.SERVER_ERROR;
         sendResponse(reqData, res, status, time, transformedE);
     }
-
    
 }
+

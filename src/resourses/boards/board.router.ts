@@ -25,14 +25,15 @@ export const boardsController = async (req: IncomingMessage, res: ServerResponse
     
     try {
         if(req.method === REQUEST_METHODS.GET && req.url === '/boards' ){
-            return sendResponse(req, res, STATUS_CODES.OK, time, getAllBoards());
+            const allBoards = await getAllBoards();
+            return sendResponse(req, res, STATUS_CODES.OK, time, allBoards);
         }
         if(req.method === REQUEST_METHODS.GET && urlValidator.test(url)){
             const boardId:string = url.split('/')[2];
             if(!uuidValidator.test(boardId)){
                 return sendResponse(req, res, STATUS_CODES.BAD_REQUEST, time, ERRORS.WRONG_ID_FORMAT);  
             }
-            const board = getBoardById(boardId);
+            const board = await getBoardById(boardId);
             return sendResponse(req, res, STATUS_CODES.OK,time, board);
         }
         if(req.method === REQUEST_METHODS.POST && req.url === '/boards'){
@@ -44,7 +45,8 @@ export const boardsController = async (req: IncomingMessage, res: ServerResponse
             return sendResponse(req, res, STATUS_CODES.SERVER_ERROR, time, ERRORS.JSON_PARSE_ERR);
            }
                postBoardObjValidator(boardObj);
-               const board = createBoard(boardObj)
+               const board = await createBoard(boardObj);
+               console.log('new board',board)
                return sendResponse(req, res, STATUS_CODES.CREATED, time, board)
         }
         if(req.method ===REQUEST_METHODS.PUT && urlValidator.test(url)){
@@ -60,7 +62,8 @@ export const boardsController = async (req: IncomingMessage, res: ServerResponse
             return sendResponse(req, res, STATUS_CODES.SERVER_ERROR, time, ERRORS.JSON_PARSE_ERR);
             }
                putBoardObjValidator(boardObj);
-               const board = updateBoard(boardObj, boardId);
+               const board = await updateBoard(boardObj, boardId);
+               console.log('returned board: ', board)
                return sendResponse(req, res, STATUS_CODES.OK, time, board);
         }
         if(req.method === REQUEST_METHODS.DELETE && urlValidator.test(url)){
@@ -68,7 +71,7 @@ export const boardsController = async (req: IncomingMessage, res: ServerResponse
             if(!uuidValidator.test(boardId)){
                 return sendResponse(req, res, STATUS_CODES.BAD_REQUEST, time, ERRORS.WRONG_ID_FORMAT);
             }
-            const deletionResult = deleteBoard(boardId);
+            const deletionResult = await deleteBoard(boardId);
             return sendResponse(req, res, deletionResult, time);
         }
     } catch (e) {

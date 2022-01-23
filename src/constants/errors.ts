@@ -28,5 +28,7 @@ export const ERRORS = {
     TASK_FROM_ANOTHER_BOARD: 'Task exists, but belongs to other board ',
     UNKNOWN_URL: 'Unknown URL',
     COLUMNS_NOT_ENTERED: 'Board property "columns" not entered or spelled incorrectly',
-    WROND_URL_FORMAT: 'URL for users has wrong format'
+    WROND_URL_FORMAT: 'URL for users has wrong format',
+    WRONG_PASSWORD: 'wrong password!',
+    NOT_AUTHORIZED: 'User is not authorized'
 }

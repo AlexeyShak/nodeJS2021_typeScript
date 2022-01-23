@@ -11,7 +11,10 @@ export const STATUS_CODES = {
     CREATED: 201,
     SERVER_ERROR: 500,
     NO_CONTENT: 204,
-    BAD_REQUEST: 400
+    BAD_REQUEST: 400,
+    FORBIDDEN: 403,
+    UNAUTHORIZED: 401
+
 };
 
 export enum LOG_LEVELS {

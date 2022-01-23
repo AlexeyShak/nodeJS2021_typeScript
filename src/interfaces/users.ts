@@ -2,7 +2,7 @@
 export interface IUserCreate {
     name: string,
     login: string,
-    password?: string
+    password: string
 }
 
 export interface IUser extends IUserCreate {
@@ -14,3 +14,12 @@ export interface IUserUpdate {
     login?: string,
     password?: string
 }
+ export interface IUserLogin {
+     login: string,
+     password: string
+ }
+
+ export interface IPayLoad {
+     userId: string,
+     login: string
+ }
