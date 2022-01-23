@@ -16,7 +16,7 @@ git clone https://github.com/AlexeyShak/nodeJS2021_typeScript.git
 ## Checkout to task7-docker-basics branch
 
 ```
-git checkout task8-posrgesql
+git checkout task9-authentication&JWT
 ```
 ## Installing NPM modules
 
@@ -30,12 +30,7 @@ npm install
 ```
 docker-compose up --build
 ```
-!!! After starting an app and postgres in docker containers please create database. Database name should match with PG_DATABASE that you may specify in .env file(default name: rsschool).
-
-
-
-
- 
+!!! After starting an app and postgres in docker containers please create database. Database name should match with PG_DATABASE that you may specify in .env file(default name: posgres).
 
 
 
